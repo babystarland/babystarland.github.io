@@ -7,6 +7,16 @@
   <body>
     <p>Google Sheets API Quickstart</p>
 
+    search type:
+    <select name="search_type">
+      <option value="id" selected>id</option>
+      <option value="gear">裝備</option>
+      <option value="gift">恩賜</option>
+    </select>
+    value:
+    <input type="text" name="search_value">
+    <br>
+
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
