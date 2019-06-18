@@ -4,35 +4,42 @@
     <title>Google Sheets API Quickstart</title>
     <meta charset="utf-8" />
     <script type="text/javascript" src="js/google_api.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <p>Google Sheets API Quickstart</p>
-
-    search type:
-    <select id="search_select" onchange="showSearchContent();">
-      <option value="id" selected>id</option>
-      <option value="裝備">裝備</option>
-      <option value="佈道">佈道</option>
-      <option value="聚會">聚會</option>
-      <option value="事工">事工</option>
-      <option value="恩賜">恩賜</option>
-    </select>
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <p>
+      <button id="authorize_button" style="">Authorize</button>
+      <button id="signout_button" style="">Sign Out</button>
+    </p>
     
-    <div id="search_content_div" style="">
+    
+    <div id="search_type_div" style="display: none">
+      search type:
+      <select id="search_select" onchange="showSearchContent();">
+        <option value="id" selected>id</option>
+        <option value="裝備">裝備</option>
+        <option value="佈道">佈道</option>
+        <option value="聚會">聚會</option>
+        <option value="事工">事工</option>
+        <option value="恩賜">恩賜</option>
+      </select>
+    </div>
+    
+    <div id="search_content_div" style="display: none">
       content:
       <input type="number" id="search_content">
     </div>
     <br>
-
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="">Authorize</button>
-    <button id="signout_button" style="">Sign Out</button>
+    <input type="button" id="search_button" class="btn btn-info" value="Search" style="display: none" onclick="showResult();">
 
     <div id="result" style="white-space: pre-wrap;"></div>
 
     <script type="text/javascript">
       let githubURL = new URL(document.URL)
-      
       // Client ID and API key from the Developer Console
       var CLIENT_ID = githubURL.searchParams.get("CLIENT_ID");
       var API_KEY = githubURL.searchParams.get("API_KEY");
@@ -43,13 +50,16 @@
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+      var allResult = "";
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
+
+      var searchTypeDiv = document.getElementById('search_type_div');
       var searchSelect = document.getElementById('search_select');
       var searchContentDiv = document.getElementById('search_content_div');
       var searchContent = document.getElementById('search_content');
-      
+      var searchButton = document.getElementById('search_button');
 
       function showSearchContent(){
         if(searchSelect.value == "id"){
@@ -65,5 +75,9 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

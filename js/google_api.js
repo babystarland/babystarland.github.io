@@ -36,6 +36,9 @@ function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
+        searchTypeDiv.style.display = 'block';
+        searchContentDiv.style.display = 'block';
+        searchButton.style.display = 'block';
         listMajors();
     } else {
         authorizeButton.style.display = 'block';
@@ -88,25 +91,42 @@ function listMajors() {
         cleanPre();
         var range = response.result;
         if (range.values.length > 0) {
-            appendPre('會員編號, 資料建立時間, 類別, 內容');
+            allResult = response.result;
+            /*appendPre('會員編號, 資料建立時間, 類別, 內容');
             for (i = 0; i < range.values.length; i++) {
                 var row = range.values[i];
                 // Print columns A and E, which correspond to indices 0 and 4.
                 if(searchSelect.value == "id"){
-                if(row[0] == searchContent.value){
-                    appendPre(row.join());
-                }
+                    if(row[0] == searchContent.value){
+                        appendPre(row.join());
+                    }
                 }
                 else{
-                if(searchSelect.value == row[2]){
-                    appendPre(row.join());
+                    if(searchSelect.value == row[2]){
+                        appendPre(row.join());
+                    }
                 }
-                }
-            }
+            }*/
         } else {
             appendPre('No data found.');
         }
     }, function(response) {
         appendPre('Error: ' + response.result.error.message);
     });
+}
+function showResult() {
+    for (i = 0; i < allResult.values.length; i++) {
+        var row = allResult.values[i];
+        // Print columns A and E, which correspond to indices 0 and 4.
+        if(searchSelect.value == "id"){
+            if(row[0] == searchContent.value){
+                appendPre(row.join());
+            }
+        }
+        else{
+            if(searchSelect.value == row[2]){
+                appendPre(row.join());
+            }
+        }
+    }
 }
