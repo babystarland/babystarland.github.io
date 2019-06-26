@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta name="google-signin-client_id" content="1040399364630-rgnf0f1u0bvjhkckrbjr8j9m1cotp4hf.apps.googleusercontent.com">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <title>Google Sheets as a Database – Authenticated INSERT with Apps Script using Execution API - Working Example</title>
 <script type="text/javascript">
@@ -171,6 +172,14 @@ $.fn.serializeObject = function() {
     });
     return o;
 };
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 </script>
 <style>
 .comments-area article header cite, .comments-area article header time {
@@ -182,6 +191,7 @@ $.fn.serializeObject = function() {
 </style>
 </head>
 <body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <div id="page" class="hfeed site">
   <div id="authorize-div" style="display: none"> <span>Authorize access to Google Apps Script Execution API</span> 
     <!--Button for the user to click to initiate auth sequence -->
@@ -213,4 +223,5 @@ $.fn.serializeObject = function() {
 </div>
 </body>
 <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </html>
