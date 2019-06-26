@@ -124,9 +124,9 @@ jQuery(document).ready(function($) {
         // Create an execution request object.
         // Create execution request.
         var request = {
-            'function': 'setData',
-            'parameters': serializedData,
-            'devMode': true // Optional.
+            'function': 'setData'
+            //'parameters': serializedData,
+            //'devMode': true // Optional.
         };
         // Make the API request.
         var op = gapi.client.request({
