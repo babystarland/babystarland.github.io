@@ -92,21 +92,6 @@ function listMajors() {
         var range = response.result;
         if (range.values.length > 0) {
             allResult = response.result;
-            /*appendPre('會員編號, 資料建立時間, 類別, 內容');
-            for (i = 0; i < range.values.length; i++) {
-                var row = range.values[i];
-                // Print columns A and E, which correspond to indices 0 and 4.
-                if(searchSelect.value == "id"){
-                    if(row[0] == searchContent.value){
-                        appendPre(row.join());
-                    }
-                }
-                else{
-                    if(searchSelect.value == row[2]){
-                        appendPre(row.join());
-                    }
-                }
-            }*/
         } else {
             appendPre('No data found.');
         }
