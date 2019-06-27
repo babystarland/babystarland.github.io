@@ -11,7 +11,7 @@ var SCRIPT_ID = '1Tjh4mJ0cB6efIiRowOIOmzshwwDBbzCNPhzJnh1MafWhOhrXUQrK9Tj8';
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
               'https://www.googleapis.com/auth/userinfo.email'];
 
-var profile = "";
+var records = "";
 /**
  * Check if current user has authorized this application.
  */
@@ -97,13 +97,14 @@ function handleGetDataResponse(resp) {
         // Apps Script function return. 
         console.log(resp.response.result);
         var records = resp.response.result.records;
+        var records = resp.response.result.header;
         if (Object.keys(records).length == 0) {
             appendPre('No records returned!');
         } else {
             var ul = document.getElementById('commentlist')
             ul.innerHTML = '';
-            Object.keys(records).forEach(function(col_name) {
-                appendComment(records[col_name]);
+            Object.keys(records).forEach(function(col) {
+                appendComment(records[col]);
             });
             var loadDiv = document.getElementById('loading');
             loadDiv.style.display = 'none';
@@ -152,7 +153,7 @@ function appendPre(message) {
 function appendComment(comment) {
     var comment_list = document.getElementById('commentlist');
     var commentNode = document.createElement("li");
-    commentNode.innerHTML = "<article><header><cite><p class='comment-author-name'>" + comment.name + " - " + comment.Email + "</p></cite><time>" + comment.Timestamp + "</time></header><section class='comment-content comment'><p>" + comment.comment + "</p> </section></article>";
+    commentNode.innerHTML = "<article><header><cite><p class='comment-author-name'>" + comment.name + " - " + comment.hobby + "</p></cite><time>" + comment.Timestamp + "</time></header><section class='comment-content comment'><p>" + comment.comment + "</p> </section></article>";
     comment_list.appendChild(commentNode);
 }
 $.fn.serializeObject = function() {
