@@ -3,10 +3,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <title>Google Sheets as a Database – Authenticated INSERT with Apps Script using Execution API - Working Example</title>
 <script type="text/javascript">
-// Your Client ID can be retrieved from your project in the Google
-// Developer Console, https://console.developers.google.com
+
 var CLIENT_ID = "1040399364630-i71sgvs6nn1530ppd8banhcen1e1dqlh.apps.googleusercontent.com";
-//var CLIENT_ID = "1040399364630-rgnf0f1u0bvjhkckrbjr8j9m1cotp4hf.apps.googleusercontent.com";
 var SCRIPT_ID = '1Tjh4mJ0cB6efIiRowOIOmzshwwDBbzCNPhzJnh1MafWhOhrXUQrK9Tj8';
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
               'https://www.googleapis.com/auth/userinfo.email'];
@@ -35,8 +33,7 @@ function handleAuthResult(authResult) {
         loadDiv.style.display = 'block';
         callScriptFunction();
     } else {
-        // Show auth UI, allowing the user to initiate authorization by
-        // clicking authorize button.
+        // Show auth UI
         authorizeDiv.style.display = 'inline';
     }
 }
@@ -58,7 +55,6 @@ function handleAuthClick(event) {
  * Calls an Apps Script function to get the data from the Google Sheet
  */
 function callScriptFunction() {
-    // Create an execution request object.
     var request = {
         'function': 'getHistory'
     };
@@ -171,14 +167,6 @@ $.fn.serializeObject = function() {
     });
     return o;
 };
-
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
 </script>
 <style>
 .comments-area article header cite, .comments-area article header time {
@@ -190,10 +178,8 @@ function onSignIn(googleUser) {
 </style>
 </head>
 <body>
-<!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
 <div id="page" class="hfeed site">
     <div id="authorize-div" style="display: none"> <span>Authorize access to Google Apps Script Execution API</span> 
-    <!--Button for the user to click to initiate auth sequence -->
     <button id="authorize-button" onclick="handleAuthClick(event)"> Authorize </button>
   </div>
   <pre id="output"></pre>
