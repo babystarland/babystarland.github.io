@@ -11,9 +11,6 @@ var SCRIPT_ID = '1Tjh4mJ0cB6efIiRowOIOmzshwwDBbzCNPhzJnh1MafWhOhrXUQrK9Tj8';
 var SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
               'https://www.googleapis.com/auth/userinfo.email'];
 
-var tmp;
-var records;
-var headers;
 /**
  * Check if current user has authorized this application.
  */
@@ -98,7 +95,7 @@ function handleGetDataResponse(resp) {
     } else {
         // Apps Script function return. 
         console.log(resp.response.result);
-        var tmp = resp.response.result;
+        console.log(resp.response.result.headers);
         var records = resp.response.result.records;
         var headers = resp.response.result.headers;
         if (Object.keys(records).length == 0) {
