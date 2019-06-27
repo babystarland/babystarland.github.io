@@ -97,7 +97,7 @@ function handleGetDataResponse(resp) {
         // Apps Script function return. 
         console.log(resp.response.result);
         var records = resp.response.result.records;
-        var records = resp.response.result.header;
+        var headers = resp.response.result.header;
         if (Object.keys(records).length == 0) {
             appendPre('No records returned!');
         } else {
