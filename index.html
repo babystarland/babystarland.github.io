@@ -12,7 +12,7 @@
   <body>
     <p>Welcome to Star Land</p>
     <p>
-      <button id="authorize_button" class="btn btn-default" style="">Authorize</button>
+      <button id="authorize_button" class="btn btn-default">Authorize</button>
       <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
     </p>
     
@@ -43,6 +43,7 @@
       // Client ID and API key from the Developer Console
       var CLIENT_ID = githubURL.searchParams.get("CLIENT_ID");
       var API_KEY = githubURL.searchParams.get("API_KEY");
+      var SCRIPT_ID = "1Tjh4mJ0cB6efIiRowOIOmzshwwDBbzCNPhzJnh1MafWhOhrXUQrK9Tj8";
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
@@ -50,7 +51,7 @@
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-      var allResult = "";
+      var allResult, records, headers;
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
