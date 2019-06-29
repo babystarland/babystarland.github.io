@@ -40,7 +40,10 @@ function updateSigninStatus(isSignedIn) {
         searchContentDiv.style.display = 'block';
         searchButton.style.display = 'block';
         listMajors();
-        callScriptFunction();
+        callScriptFunction("Data");
+        callScriptFunction("0-2");
+        callScriptFunction("3-4");
+        callScriptFunction("5-6");
     } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
@@ -65,10 +68,10 @@ function handleSignoutClick(event) {
 /**
  * Calls an Apps Script function to get the data from the Google Sheet
  */
-function callScriptFunction() {
+function callScriptFunction(sheet_name) {
     var request = {
         'function': 'getHistory',
-        'parameters': {"name": "Data"}
+        'parameters': {"name": sheet_name}
     };
     // Make the API request.
     var op = gapi.client.request({
@@ -78,18 +81,17 @@ function callScriptFunction() {
         'body': request
     });
     op.execute(function(resp){ 
-        handleGetDataResponse(resp);
+        handleGetDataResponse(resp, sheet_name);
     });
 }
-function handleGetDataResponse(resp) {
+function handleGetDataResponse(resp, sheet_name) {
     if (resp.error && resp.error.status) {
         // The API encountered a problem before the script started executing.
         appendPre('Error calling API:');
         appendPre(JSON.stringify(resp, null, 2));
     } else if (resp.error) {
         // The API executed, but the script returned an error.
-        // The values of this object are the script's 'errorMessage' 'errorType',
-        // and an array of stack trace elements.
+        // error contains: 'errorMessage' 'errorType', 'scriptStackTraceElements'
         var error = resp.error.details[0];
         appendPre('Script error message: ' + error.errorMessage);
         if (error.scriptStackTraceElements) {
@@ -101,11 +103,8 @@ function handleGetDataResponse(resp) {
             }
         }
     } else {
-        // Apps Script function return. 
         console.log(resp.response.result);
-        console.log(resp.response.result.headers);
-        records = resp.response.result.records;
-        headers = resp.response.result.headers;
+        allData[sheet_name] = resp.response.result;
         if (Object.keys(records).length == 0) {
             appendPre('No records returned!');
         } else {
