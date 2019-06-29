@@ -42,6 +42,7 @@ function updateSigninStatus(isSignedIn) {
         listMajors();
         callScriptFunction("Data");
         callScriptFunction("0-2");
+        callScriptFunction("2-3");
         callScriptFunction("3-4");
         callScriptFunction("5-6");
     } else {
@@ -105,7 +106,7 @@ function handleGetDataResponse(resp, sheet_name) {
     } else {
         console.log(resp.response.result);
         allData[sheet_name] = resp.response.result;
-        if (Object.keys(records).length == 0) {
+        if (Object.keys(allData[sheet_name]).length == 0) {
             appendPre('No records returned!');
         } else {
             // TODO
