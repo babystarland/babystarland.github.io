@@ -39,7 +39,7 @@ function updateSigninStatus(isSignedIn) {
         searchTypeDiv.style.display = 'block';
         searchContentDiv.style.display = 'block';
         searchButton.style.display = 'block';
-        listMajors();
+        //listMajors();
         callScriptFunction("Data");
         callScriptFunction("0-2");
         callScriptFunction("2-3");
@@ -104,10 +104,16 @@ function handleGetDataResponse(resp, sheet_name) {
             }
         }
     } else {
-        console.log(resp.response.result);
-        allData[sheet_name] = resp.response.result;
+        //console.log(resp.response.result);
+        if (sheet_name != "Data") {
+            allData[sheet_name] = resp.response.result;
+        }
+        else{
+            allHistory = resp.response.result;
+        }
+        
         if (Object.keys(allData[sheet_name]).length == 0) {
-            appendPre('No records returned!');
+            alert('No records returned!');
         } else {
             // TODO
         }

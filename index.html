@@ -21,7 +21,7 @@
     <div id="search_type_div" style="display: none">
       search type:
       <select id="search_select" onchange="showSearchContent();">
-        <option value="id" selected>id</option>
+        <option value="會員編號" selected>會員編號</option>
         <option value="裝備">裝備</option>
         <option value="佈道">佈道</option>
         <option value="聚會">聚會</option>
@@ -52,8 +52,8 @@
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
-      var allResult;
       var allData = {};
+      var allHistory = {};
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');

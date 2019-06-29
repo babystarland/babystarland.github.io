@@ -19,8 +19,9 @@ function cleanPre() {
 }
 
 /**
- * Print the names and majors of students in a sample spreadsheet:
+ * Get Data from sheet API
  */
+ /*
 function listMajors() {
     gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: githubURL.searchParams.get("spreadsheetId"),
@@ -36,22 +37,35 @@ function listMajors() {
     }, function(response) {
         appendPre('Error: ' + response.result.error.message);
     });
-}
+}*/
 function showResult() {
     cleanPre();
     appendPre('會員編號, 資料建立時間, 類別, 內容');
-    for (i = 0; i < allResult.values.length; i++) {
-        var row = allResult.values[i];
-        // Print columns A and E, which correspond to indices 0 and 4.
-        if(searchSelect.value == "id"){
-            if(row[0] == searchContent.value){
-                appendPre(row.join());
+    // Print columns A and E, which correspond to indices 0 and 4.
+    if(searchSelect.value == "會員編號"){
+        for(var sheet_name in allData){
+            for(var row in allData[sheet_name]["records"]){
+                var cur = allData[sheet_name]["records"][row]
+                if(cur["會員編號"] == searchContent.value){
+                    appendPre(JSON.stringify(cur, null, 4));
+                }
             }
         }
-        else{
-            if(searchSelect.value == row[2]){
-                appendPre(row.join());
+        appendPre(allHistory["headers"].join());
+        for(var row in allHistory["records"]){
+            var cur = allHistory["records"][row]
+            var result = ""
+            if(cur["會員編號"] == searchContent.value){
+                for(var k in cur){
+                    result += "," + cur[k]
+                }
+                appendPre(result);
             }
         }
+        /*if(row[0] == searchContent.value){
+            appendPre(row.join());
+        }*/
+    }
+    else{
     }
 }
