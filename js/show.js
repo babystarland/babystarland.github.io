@@ -33,13 +33,16 @@ function listMajors() {
 }*/
 function showResult() {
     cleanPre();
-    appendPre('會員編號, 資料建立時間, 類別, 內容');
-    // Print columns A and E, which correspond to indices 0 and 4.
+    
+    var cur = {};
     if(searchSelect.value == "會員編號"){
         for(var sheet_name in allData){
+            var id_idx = allData[sheet_name]["headers"].indexOf("會員編號");
             for(var row in allData[sheet_name]["records"]){
-                var cur = allData[sheet_name]["records"][row]
-                if(cur["會員編號"] == searchContent.value){
+                if(allData[sheet_name]["records"][row][id_idx] == searchContent.value){ 
+                    for(var i = 0; i < allData[sheet_name]["headers"].length; i++){
+                        cur[allData[sheet_name]["headers"][i]] = allData[sheet_name]["records"][row][i];
+                    }
                     appendPre(JSON.stringify(cur, null, 4));
                 }
             }
@@ -48,14 +51,10 @@ function showResult() {
         // processing history
         appendPre(babyHistory["headers"].join());
         chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
+        var id_idx = allData[sheet_name]["headers"].indexOf("會員編號");
         for(var row in babyHistory["records"]){
-            var cur = babyHistory["records"][row]
-            var result = ""
-            if(cur["會員編號"] == searchContent.value){
-                for(var k in cur){
-                    result += cur[k] + ","
-                }
-                appendPre(result);
+            if(babyHistory["records"][row][id_idx] == searchContent.value){
+                appendPre(babyHistory["records"][row].join());
                 chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1;
             }
         }
