@@ -64,10 +64,11 @@ function showResult() {
                 chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1
                 var myRadarChart = new Chart(ctx, {
                     type: 'radar',
-                    data: chart_data,
+                    data: chart_data/*,
                     options:{
-                        responsive: false
-                    }
+                        //responsive: false
+                        display: false
+                    }*/
                 });
             }
         }
