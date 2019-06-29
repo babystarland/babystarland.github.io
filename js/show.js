@@ -61,8 +61,9 @@ function showResult() {
                 }
                 appendPre(result);
 
-                chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1
-                var myRadarChart = new Chart(ctx, {
+                chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
+                chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1;
+                myRadarChart = new Chart(ctx, {
                     type: 'radar',
                     data: chart_data,
                     options: {
