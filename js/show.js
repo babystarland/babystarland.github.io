@@ -51,7 +51,10 @@ function showResult() {
                 }
             }
         }
+        
+        // processing history
         appendPre(allHistory["headers"].join());
+        chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
         for(var row in allHistory["records"]){
             var cur = allHistory["records"][row]
             var result = ""
@@ -60,25 +63,23 @@ function showResult() {
                     result += cur[k] + ","
                 }
                 appendPre(result);
-
-                chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
                 chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1;
-                myRadarChart = new Chart(ctx, {
-                    type: 'radar',
-                    data: chart_data,
-                    options: {
-                        legend: {
-                            position: 'top',
-                        },
-                        scale: {
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
             }
         }
+        myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: chart_data,
+            options: {
+                legend: {
+                    position: 'top',
+                },
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
         /*if(row[0] == searchContent.value){
             appendPre(row.join());
         }*/
