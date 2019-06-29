@@ -65,11 +65,14 @@ function showResult() {
                 var myRadarChart = new Chart(ctx, {
                     type: 'radar',
                     data: chart_data,
-                    options = {
-                        responsive: false
+                    options: {
+                        legend: {
+                            position: 'top',
+                        },
                         scale: {
-                            // Hides the scale
-                            display: false
+                            ticks: {
+                                beginAtZero: true
+                            }
                         }
                     }
                 });
