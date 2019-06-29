@@ -112,7 +112,7 @@ function handleGetDataResponse(resp, sheet_name) {
             allHistory = resp.response.result;
         }
         
-        if (Object.keys(allData[sheet_name]).length == 0) {
+        if (Object.keys(resp.response.result).length == 0) {
             alert('No records returned!');
         } else {
             // TODO
