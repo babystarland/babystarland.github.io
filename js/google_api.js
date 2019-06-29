@@ -108,10 +108,5 @@ function handleGetDataResponse(resp) {
                 babyHistory = resp.response.result[sheet_name];
             }
         }
-        
-        if (Object.keys(resp.response.result).length == 0) {
-            alert('No records returned!');
-        }
-        else {}
     }
 }

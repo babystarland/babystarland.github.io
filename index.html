@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
     <link rel="icon" href="img/favicon.jpg">
     <script type="text/javascript" src="js/google_api.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
     <script type="text/javascript" src="js/show.js"></script>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -80,11 +84,6 @@
           searchContentDiv.style.display = 'none';
         }
       }
-    </script>
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script type="text/javascript" src="js/myChart.js"></script>
