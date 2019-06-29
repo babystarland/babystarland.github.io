@@ -57,7 +57,7 @@ function showResult() {
             var result = ""
             if(cur["會員編號"] == searchContent.value){
                 for(var k in cur){
-                    result += "," + cur[k]
+                    result += cur[k] + ","
                 }
                 appendPre(result);
             }
