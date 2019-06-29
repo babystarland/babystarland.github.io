@@ -100,12 +100,12 @@ function handleGetDataResponse(resp) {
         }
     } else {
         //console.log(resp.response.result);
-        for(var sheet_name in allData){
+        for(var sheet_name in resp.response.result){
             if (sheet_name != "Data") {
-                allData[sheet_name] = resp.response.result;
+                allData[sheet_name] = resp.response.result[sheet_name];
             }
             else{
-                babyHistory = resp.response.result;
+                babyHistory = resp.response.result[sheet_name];
             }
         }
         
