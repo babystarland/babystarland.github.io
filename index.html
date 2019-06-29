@@ -53,9 +53,12 @@
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+      var CATEGORY = ["裝備", "佈道", "聚會", "事工", "創意學校"];
+
       var allData = {};
       var allHistory = {};
 
+      var ctx = document.getElementById("myChart");
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
 

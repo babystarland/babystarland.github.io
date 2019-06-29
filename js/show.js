@@ -60,6 +60,15 @@ function showResult() {
                     result += cur[k] + ","
                 }
                 appendPre(result);
+
+                chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1
+                var myRadarChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: chart_data,
+                    options:{
+                        responsive: false
+                    }
+                });
             }
         }
         /*if(row[0] == searchContent.value){
