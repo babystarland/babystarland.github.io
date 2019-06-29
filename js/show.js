@@ -51,11 +51,14 @@ function showResult() {
         // processing history
         appendPre(babyHistory["headers"].join());
         chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
-        var id_idx = allData[sheet_name]["headers"].indexOf("會員編號");
+        var id_idx = babyHistory["headers"].indexOf("會員編號");
         for(var row in babyHistory["records"]){
             if(babyHistory["records"][row][id_idx] == searchContent.value){
                 appendPre(babyHistory["records"][row].join());
-                chart_data["datasets"][0]["data"][CATEGORY.indexOf(cur["類別"])] += 1;
+
+                var cat_idx_in_header = babyHistory["headers"].indexOf("類別");
+                var cat_idx = CATEGORY.indexOf(babyHistory["records"][row][cat_idx_in_header])
+                chart_data["datasets"][0]["data"][cat_idx] += 1;
             }
         }
         myRadarChart = new Chart(ctx, {
