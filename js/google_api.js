@@ -39,12 +39,7 @@ function updateSigninStatus(isSignedIn) {
         searchTypeDiv.style.display = 'block';
         searchContentDiv.style.display = 'block';
         searchButton.style.display = 'block';
-        //listMajors();
-        callScriptFunction("Data");
-        callScriptFunction("0-2");
-        callScriptFunction("2-3");
-        callScriptFunction("3-4");
-        callScriptFunction("5-6");
+        callScriptFunction(["Data", "0-2", "2-3", "3-4", "5-6"]);
     } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
@@ -69,10 +64,10 @@ function handleSignoutClick(event) {
 /**
  * Calls an Apps Script function to get the data from the Google Sheet
  */
-function callScriptFunction(sheet_name) {
+function callScriptFunction(sheet_list) {
     var request = {
-        'function': 'getHistory',
-        'parameters': {"name": sheet_name}
+        'function': 'getAllData',
+        'parameters': {"name": sheet_list}
     };
     // Make the API request.
     var op = gapi.client.request({
@@ -82,10 +77,10 @@ function callScriptFunction(sheet_name) {
         'body': request
     });
     op.execute(function(resp){ 
-        handleGetDataResponse(resp, sheet_name);
+        handleGetDataResponse(resp);
     });
 }
-function handleGetDataResponse(resp, sheet_name) {
+function handleGetDataResponse(resp) {
     if (resp.error && resp.error.status) {
         // The API encountered a problem before the script started executing.
         appendPre('Error calling API:');
@@ -105,17 +100,18 @@ function handleGetDataResponse(resp, sheet_name) {
         }
     } else {
         //console.log(resp.response.result);
-        if (sheet_name != "Data") {
-            allData[sheet_name] = resp.response.result;
-        }
-        else{
-            allHistory = resp.response.result;
+        for(var sheet_name in allData){
+            if (sheet_name != "Data") {
+                allData[sheet_name] = resp.response.result;
+            }
+            else{
+                babyHistory = resp.response.result;
+            }
         }
         
         if (Object.keys(resp.response.result).length == 0) {
             alert('No records returned!');
-        } else {
-            // TODO
         }
+        else {}
     }
 }
