@@ -26,7 +26,7 @@ function showHistory(){
     chart_data["datasets"][0]["data"] = [0, 0, 0, 0, 0];
     
     for(var row in babyHistory["records"]){
-        if(babyHistory["records"][row][idx_in_history].indexOf(searchContent.value) !== -1){
+        if(babyHistory["records"][row][idx_in_history].toString().indexOf(searchContent.value.toString()) !== -1){
             appendPre(babyHistory["records"][row].join());
 
             if(search_type == "會員編號"){
