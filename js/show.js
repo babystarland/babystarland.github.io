@@ -13,7 +13,9 @@ function cleanPre() {
     while (pre.firstChild) {
         pre.removeChild(pre.firstChild);
     }
-    myRadarChart.destroy();
+    if(myRadarChart instanceof Chart){
+        myRadarChart.destroy();
+    }
 }
 
 function showHistory(){
