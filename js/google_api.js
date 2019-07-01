@@ -36,13 +36,16 @@ function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
+
         searchTypeDiv.style.display = 'block';
         searchContentDiv.style.display = 'block';
-        searchButton.style.display = 'block';
         callScriptFunction(["Data", "0-2", "2-3", "3-4", "5-6"]);
     } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
+
+        searchTypeDiv.style.display = 'none';
+        searchContentDiv.style.display = 'none';
     }
 }
 
