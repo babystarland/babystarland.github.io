@@ -13,10 +13,10 @@ function cleanPre() {
     while (pre.firstChild) {
         pre.removeChild(pre.firstChild);
     }
+    myRadarChart="";
     if(myRadarChart instanceof Chart){
         myRadarChart.clear();
         myRadarChart.destroy();
-        myRadarChart="";
     }
 }
 
