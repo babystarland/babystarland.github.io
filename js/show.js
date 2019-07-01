@@ -14,6 +14,7 @@ function cleanPre() {
         pre.removeChild(pre.firstChild);
     }
     if(myRadarChart instanceof Chart){
+        myRadarChart.clear();
         myRadarChart.destroy();
     }
 }
