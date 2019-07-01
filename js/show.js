@@ -11,26 +11,6 @@ function cleanPre() {
     }
 }
 
-/**
- * Get Data from sheet API
- */
- /*
-function listMajors() {
-    gapi.client.sheets.spreadsheets.values.get({
-        spreadsheetId: githubURL.searchParams.get("spreadsheetId"),
-        range: 'Data!A2:D',
-    }).then(function(response) {
-        cleanPre();
-        var range = response.result;
-        if (range.values.length > 0) {
-            allResult = response.result;
-        } else {
-            appendPre('No data found.');
-        }
-    }, function(response) {
-        appendPre('Error: ' + response.result.error.message);
-    });
-}*/
 function showResult() {
     cleanPre();
     
