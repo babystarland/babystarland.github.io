@@ -16,7 +16,6 @@ function cleanPre() {
     if(myRadarChart instanceof Chart){
         myRadarChart.clear();
         myRadarChart.destroy();
-        myRadarChart="";
     }
 }
 
@@ -56,6 +55,7 @@ function showHistory(){
 }
 
 function getInfoByID(id) {
+    var cur = {};
     for(var sheet in allData){
         var idx = allData[sheet]["headers"].indexOf("會員編號");
         for(var row in allData[sheet]["records"]){
@@ -64,7 +64,7 @@ function getInfoByID(id) {
                     cur[allData[sheet]["headers"][i]] = allData[sheet]["records"][row][i];
                 }
                 // TODO: duplicate ID
-                return JSON.stringify(cur, null, 4);
+                return appendPre(JSON.stringify(cur, null, 4));
             }
         }
     }
@@ -72,12 +72,12 @@ function getInfoByID(id) {
 
 function showResult() {
     if(isEmpty()) return false;
+    if(!allData || !babyHistory) setTimeout(showResult, 1000);
     cleanPre();
     var search_type = searchSelect.value;
     var idx_in_history = babyHistory["headers"].indexOf(search_type);
     
     // find match item in 0-6 sheet
-    var cur = {};
     if(searchSelect.value == "會員編號"){
         var info = getInfoByID(searchContent.value);
         appendPre(info);
