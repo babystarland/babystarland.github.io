@@ -73,15 +73,18 @@ function getInfoByID(id) {
 
 function showResult() {
     if(isEmpty()) return false;
-    if(!babyHistory) return setTimeout(showResult, 1000);
+    if(!babyHistory){
+        appendPre("loading");
+        return setTimeout(showResult, 1000);
+    }
     cleanPre();
     var search_type = searchSelect.value;
     var idx_in_history = babyHistory["headers"].indexOf(search_type);
     
     // find match item in 0-6 sheet
-    if(searchSelect.value == "會員編號"){
+    if(searchSelect.value == "會員編號" && Number.isInteger(searchContent.value)){
         var info = getInfoByID(searchContent.value);
-        appendPre(info)
+        appendPre(info);
     }
     else{}
     showHistory();
