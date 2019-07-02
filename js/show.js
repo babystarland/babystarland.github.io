@@ -72,7 +72,7 @@ function getInfoByID(id) {
 
 function showResult() {
     if(isEmpty()) return false;
-    if(!allData || !babyHistory) setTimeout(showResult, 1000);
+    if(!allData || !babyHistory) return setTimeout(showResult, 1000);
     cleanPre();
     var search_type = searchSelect.value;
     var idx_in_history = babyHistory["headers"].indexOf(search_type);
