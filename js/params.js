@@ -1,3 +1,7 @@
+var CATEGORY = ["裝備", "佈道", "聚會", "事工", "創意學校"];
+var allData = {};
+var babyHistory, myRadarChart;
+
 var chart_data = {
     labels: CATEGORY,
     datasets: [

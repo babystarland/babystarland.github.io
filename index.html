@@ -9,7 +9,7 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-    <script type="text/javascript" src="js/show.js"></script>
+    
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -55,34 +55,24 @@
       var CLIENT_ID = githubURL.searchParams.get("CLIENT_ID");
       var API_KEY = githubURL.searchParams.get("API_KEY");
       var SCRIPT_ID = "1Tjh4mJ0cB6efIiRowOIOmzshwwDBbzCNPhzJnh1MafWhOhrXUQrK9Tj8";
-
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
-
-      // Authorization scopes required by the API; multiple scopes can be
-      // included, separated by spaces.
+      // Authorization scopes required by the API; multiple scopes separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
-      var CATEGORY = ["裝備", "佈道", "聚會", "事工", "創意學校"];
-
-      var allData = {};
-      var babyHistory, myRadarChart;
-
-      var ctx = document.getElementById("myChart");
+      
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
 
+      var ctx = document.getElementById("myChart");
       var searchTypeDiv = document.getElementById('search_type_div');
       var searchSelect = document.getElementById('search_select');
       var searchContentDiv = document.getElementById('search_content_div');
       var searchContent = document.getElementById('search_content');
       var searchButton = document.getElementById('search_button');
-
-      function showSearchContent(){
-        searchContentDiv.style.display = 'block';
-      }
     </script>
+    <script type="text/javascript" src="js/params.js"></script>
+    <script type="text/javascript" src="js/show.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-    <script type="text/javascript" src="js/myChart.js"></script>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -30,6 +30,7 @@ function showHistory(){
         if(babyHistory["records"][row][idx].toString().indexOf(searchContent.value.toString()) !== -1){
             appendPre(babyHistory["records"][row].join());
 
+            // show chart
             if(search_type == "會員編號"){
                 var data_idx = CATEGORY.indexOf(babyHistory["records"][row][cat_idx])
                 chart_data["datasets"][0]["data"][data_idx] += 1;
@@ -64,7 +65,7 @@ function getInfoByID(id) {
                     cur[allData[sheet]["headers"][i]] = allData[sheet]["records"][row][i];
                 }
                 // TODO: duplicate ID
-                return appendPre(JSON.stringify(cur, null, 4));
+                return JSON.stringify(cur, null, 4);
             }
         }
     }
@@ -80,7 +81,8 @@ function showResult() {
     // find match item in 0-6 sheet
     if(searchSelect.value == "會員編號"){
         var info = getInfoByID(searchContent.value);
-        appendPre(info);
+        appendPre(info)
     }
+    else{}
     showHistory();
 }
