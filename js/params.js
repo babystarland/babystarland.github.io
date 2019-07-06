@@ -7,23 +7,13 @@ var chart_data = {
     datasets: [
         {
             label: "能力值",
-            backgroundColor: "rgba(179,181,198,0.2)",
-            borderColor: "rgba(179,181,198,1)",
-            pointBackgroundColor: "rgba(179,181,198,1)",
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235)",
+            pointBackgroundColor: "rgba(54, 162, 235)",
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(179,181,198,1)",
+            pointHoverBorderColor: "rgba(54, 162, 235)",
             data: [0, 0, 0, 0, 0]
-        }/*,
-        {
-            label: "達成值",
-            backgroundColor: "rgba(255,99,132,0.2)",
-            borderColor: "rgba(255,99,132,1)",
-            pointBackgroundColor: "rgba(255,99,132,1)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(255,99,132,1)",
-            data: []
-        }*/
+        }
     ]
 };
