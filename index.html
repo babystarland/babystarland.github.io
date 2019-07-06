@@ -18,45 +18,49 @@
   <body>
     <ul class="topnav">
       <li><a class="active" href="#home">Star Land</a></li>
-      <li>This is an item
-        <div class="buttons">
-          <button id="authorize_button" class="btn btn-default">Authorize</button>
-          <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
-        </div>
-      </li>
+      <div class="buttons">
+        <button id="authorize_button" class="btn btn-default">Authorize</button>
+        <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
+      </div>
     </ul>
-    <ul class="nav nav-pills">
-        <li class="active"><a data-toggle="pill" href="#history">生命歷程</a></li>
-        <li><a data-toggle="pill" href="#menu1">名單</a></li>
+
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="pill" href="#history">生命歷程搜尋</a></li>
+        <li><a data-toggle="pill" href="#name_list">名單搜尋</a></li>
       </ul>
       
       <div class="tab-content">
         <div id="history" class="tab-pane fade in active">
-          <h3>生命歷程</h3>
-          <div id="search_content_div" style="display: none">
-              search type:
-              <select id="search_select">
-                <option value="會員編號" selected>會員編號</option>
-                <option value="裝備">裝備</option>
-                <option value="佈道">佈道</option>
-                <option value="聚會">聚會</option>
-                <option value="事工">事工</option>
-                <option value="創意學校">創意學校</option>
-              </select>
+          <h3>生命歷程搜尋</h3>
+          <div id="search_content_div" style="display: block">
+            search type:
+            <select id="search_select">
+              <option value="會員編號" selected>會員編號</option>
+              <option value="裝備">裝備</option>
+              <option value="佈道">佈道</option>
+              <option value="聚會">聚會</option>
+              <option value="事工">事工</option>
+              <option value="創意學校">創意學校</option>
+            </select>
               
-              <form action="javascript:showResult()" onSubmit="return showResult();">
+            <form action="javascript:showResult()" onSubmit="return showResult();">
               content:
               <input type="text" id="search_content" placeholder="Search..">
               <input type="button" id="search_button" class="btn btn-info" value="Search" onclick="showResult();">
-              </form>
-            </div>
+            </form>
+          </div>
         </div>
-        <div id="menu1" class="tab-pane fade">
-          <h3>名單</h3>
-          <p>p 名單</p>
+        <div id="name_list" class="tab-pane fade">
+          <h3>名單搜尋</h3>
+          <form action="javascript:showResult()" onSubmit="return showResult();">
+            content:
+            <input type="text" id="search_content" placeholder="Search..">
+            <input type="button" id="search_button" class="btn btn-info" value="Search" onclick="showResult();">
+          </form>
         </div>
       </div>
-    
+    </div>
     <br>
     <!-- show result -->
     <div id="result" style="white-space: pre-wrap;"></div>
