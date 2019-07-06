@@ -19,9 +19,9 @@ function cleanPre() {
             myRadarChart.destroy();
         }
       }
-      catch(err) {
+    catch(err) {
         console.log(err);
-      }
+    }
 }
 
 function showHistory(){
