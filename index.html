@@ -13,14 +13,23 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-    <p>Welcome to Star Land</p>
+    <ul class="topnav">
+      <li><a class="active" href="#home">Star Land</a></li>
+      <li>This is an item
+        <div class="buttons">
+          <button id="authorize_button" class="btn btn-default">Authorize</button>
+          <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
+        </div>
+      </li>
+    </ul>
+
     <p>
-      <button id="authorize_button" class="btn btn-default">Authorize</button>
-      <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
+      <!--<button id="authorize_button" class="btn btn-default">Authorize</button>
+      <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>-->
     </p>
-    
     
     <div id="search_type_div" style="display: none">
       search type:
