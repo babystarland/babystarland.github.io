@@ -38,7 +38,7 @@ function updateSigninStatus(isSignedIn) {
         signoutButton.style.display = 'block';
 
         searchContentDiv.style.display = 'block';
-        callScriptFunction(["Data", "0-2", "2-3", "3-4", "5-6", "一年級", "二年級", "三年級", "四年級"]);
+        callScriptFunction(["Data", "0-2", "2-3", "3-4", "5-6", "二年級", "三年級", "四年級"]);
     } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
