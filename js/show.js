@@ -83,10 +83,8 @@ function showResult() {
         return setTimeout(showResult, 1000);
     }
     cleanPre();
-    var search_type = searchSelect.value;
-    var idx_in_history = babyHistory["headers"].indexOf(search_type);
-    
-    // find match item in 0-6 sheet
+        
+    // find match person from all name lists
     if(searchSelect.value == "會員編號" && Number.isInteger(searchContent.value)){
         var info = getInfoByID(searchContent.value);
         appendPre(info);

@@ -63,11 +63,13 @@
 
       <br>
       <!-- show result -->
+      <table id="info_table"></table>
+      <table id="history_table"></table>
       <div id="result" style="white-space: pre-wrap;"></div>
       <div style="width:50%">
         <canvas id="myChart"></canvas>
       </div>
-      <table id="myTable"></table>
+      
     </div>
     
     <script type="text/javascript">
@@ -88,6 +90,9 @@
       var searchSelect = document.getElementById('search_select');
       var searchHistoryDiv = document.getElementById('search_history_div');
       var searchContent = document.getElementById('search_content');
+
+      var infoTable = document.getElementById("info_table");
+      var historyTable = document.getElementById("history_table");
     </script>
     <script type="text/javascript" src="js/params.js"></script>
     <script type="text/javascript" src="js/show.js"></script>
