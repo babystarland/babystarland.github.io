@@ -13,10 +13,15 @@ function cleanPre() {
     while (pre.firstChild) {
         pre.removeChild(pre.firstChild);
     }
-    if(myRadarChart instanceof Chart){
-        myRadarChart.clear();
-        myRadarChart.destroy();
-    }
+    try {
+        if(myRadarChart instanceof Chart){
+            myRadarChart.clear();
+            myRadarChart.destroy();
+        }
+      }
+      catch(err) {
+        console.log(err);
+      }
 }
 
 function showHistory(){
