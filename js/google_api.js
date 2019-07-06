@@ -37,13 +37,13 @@ function updateSigninStatus(isSignedIn) {
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
 
-        searchContentDiv.style.display = 'block';
+        searchHistoryDiv.style.display = 'block';
         callScriptFunction(["Data", "0-2", "2-3", "3-4", "5-6", "二年級", "三年級", "四年級"]);
     } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
 
-        searchContentDiv.style.display = 'none';
+        searchHistoryDiv.style.display = 'none';
     }
 }
 

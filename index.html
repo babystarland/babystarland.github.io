@@ -30,10 +30,10 @@
         <li><a data-toggle="pill" href="#name_list">名單搜尋</a></li>
       </ul>
       
-      <div class="tab-content">
+      <div id="search_history_div" style="display: block" class="tab-content">
         <div id="history" class="tab-pane fade in active">
           <h3>生命歷程搜尋</h3>
-          <div id="search_content_div" style="display: block">
+          <div>
             search type:
             <select id="search_select">
               <option value="會員編號" selected>會員編號</option>
@@ -61,13 +61,13 @@
         </div>
       </div>
 
-
       <br>
       <!-- show result -->
       <div id="result" style="white-space: pre-wrap;"></div>
-      <div style="width:40%">
+      <div style="width:50%">
         <canvas id="myChart"></canvas>
       </div>
+      <table id="myTable"></table>
     </div>
     
     <script type="text/javascript">
@@ -86,7 +86,7 @@
 
       var ctx = document.getElementById("myChart");
       var searchSelect = document.getElementById('search_select');
-      var searchContentDiv = document.getElementById('search_content_div');
+      var searchHistoryDiv = document.getElementById('search_history_div');
       var searchContent = document.getElementById('search_content');
     </script>
     <script type="text/javascript" src="js/params.js"></script>
