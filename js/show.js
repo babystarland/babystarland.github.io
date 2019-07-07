@@ -85,7 +85,7 @@ function showResult() {
     cleanPre();
         
     // find match person from all name lists
-    if(searchSelect.value == "會員編號" && Number.isInteger(searchContent.value)){
+    if(searchSelect.value == "會員編號" && parseInt(searchContent.value)){
         var info = getInfoByID(searchContent.value);
         appendPre(info);
     }
