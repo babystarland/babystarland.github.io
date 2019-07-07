@@ -11,52 +11,80 @@
     </script>
     
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
   </head>
+
   <body>
-    <ul class="topnav">
-      <li><a class="active" href="#home">Star Land</a></li>
-      <div class="buttons">
-        <button id="authorize_button" class="btn btn-default">Authorize</button>
-        <button id="signout_button" class="btn btn-default" style="display: none">Sign Out</button>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/starland_logo.PNG" width="70" height="30" class="d-inline-block align-top" alt="">
+          x
+          <img src="img/kidsadv_logo.PNG" width="47" height="30" class="d-inline-block align-top" alt="">
+          兒童教會資料庫
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav" role="tablist" id="tab-tab">
+            <li class="nav-item">
+              <a class="nav-link active" id="history-tab" href="#history" role="tab" data-toggle="tab"
+                aria-controls="history" aria-selected="true">生命歷程搜尋</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="name-list-tab" href="#name-list" role="tab" data-toggle="tab"
+                aria-controls="name-list" aria-selected="false">名單搜尋</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button id="authorize_button" class="btn btn-outline-success my-2 my-sm-0">登入</button>
+          <button id="signout_button" class="btn btn-outline-success my-2 my-sm-0" style="display: none">登出</button>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
-    </ul>
+    </nav>
 
     <div class="container">
-      <ul class="nav nav-pills">
-        <li class="active"><a data-toggle="pill" href="#history">生命歷程搜尋</a></li>
-        <li><a data-toggle="pill" href="#name_list">名單搜尋</a></li>
-      </ul>
-      
+      <div style="height: 15px;"></div>
+
       <div id="search_history_div" style="display: block" class="tab-content">
-        <div id="history" class="tab-pane fade in active">
+        <div id="history" class="tab-pane fade show active" role="tabpanel" aria-labelledby="history-tab">
           <h3>生命歷程搜尋</h3>
-          <div>
-            search type:
-            <select id="search_select">
-              <option value="會員編號" selected>會員編號</option>
-              <option value="裝備">裝備</option>
-              <option value="佈道">佈道</option>
-              <option value="聚會">聚會</option>
-              <option value="事工">事工</option>
-              <option value="創意學校">創意學校</option>
-            </select>
-              
-            <form action="javascript:showResult()" onSubmit="return showResult();">
-              content:
-              <input type="text" id="search_content" placeholder="Search..">
-              <input type="button" id="search_button" class="btn btn-info" value="Search" onclick="showResult();">
-            </form>
-          </div>
-        </div>
-        <div id="name_list" class="tab-pane fade">
-          <h3>名單搜尋</h3>
+          <div style="height: 10px;"></div>
           <form action="javascript:showResult()" onSubmit="return showResult();">
-            content:
-            <input type="text" id="search_content" placeholder="Search..">
-            <input type="button" id="search_button" class="btn btn-info" value="Search" onclick="showResult();">
+            <div class="input-group mb-3">
+              <select id="search_select" class="custom-select col-2">
+                <option value="會員編號" selected>會員編號</option>
+                <option value="裝備">裝備</option>
+                <option value="佈道">佈道</option>
+                <option value="聚會">聚會</option>
+                <option value="事工">事工</option>
+                <option value="創意學校">創意學校</option>
+              </select>
+              <input type="text" id="search_content" class="form-control" placeholder="搜尋..">
+              <div class="input-group-append">
+                <button type="button" id="search_button" class="btn btn-outline-secondary"
+                  onclick="showResult();">搜尋</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="name-list" class="tab-pane fade" role="tabpanel" aria-labelledby="name-list-tab">
+          <h3>名單搜尋</h3>
+          <div style="height: 10px;"></div>
+          <form action="javascript:showResult()" onSubmit="return showResult();">
+            <div class="input-group mb-3">
+              <input type="text" id="search_content" class="form-control" placeholder="搜尋..">
+              <div class="input-group-append">
+                <button type="button" id="search_button" class="btn btn-outline-secondary"
+                  onclick="showResult();">搜尋</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
@@ -101,6 +129,14 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
   </body>
 </html>
