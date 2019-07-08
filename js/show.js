@@ -105,6 +105,7 @@ function showTable(data) {
         col.push(th);
     }
 
+    $('#list_table').bootstrapTable('destroy');
     $('#list_table').bootstrapTable({
         "columns": col,
         "data": data,
