@@ -92,3 +92,7 @@ function showResult() {
     else{}
     showHistory();
 }
+
+function showTable() {
+    
+}
