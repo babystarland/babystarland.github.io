@@ -25,7 +25,8 @@ function cleanPre() {
 }
 
 function showHistory(){
-    appendPre(babyHistory["headers"].join());
+    // appendPre(babyHistory["headers"].join());
+    var cur = [];
     var search_type = searchSelect.value;
     var idx = (search_type == "會員編號") ? babyHistory["headers"].indexOf("會員編號") : babyHistory["headers"].indexOf("內容");
     var cat_idx = babyHistory["headers"].indexOf("類別");
@@ -33,8 +34,8 @@ function showHistory(){
     
     for(var row in babyHistory["records"]){
         if(babyHistory["records"][row][idx].toString().indexOf(searchContent.value.toString()) !== -1){
-            appendPre(babyHistory["records"][row].join());
-
+            cur.push(babyHistory["records"][row]);
+            // appendPre(babyHistory["records"][row].join());
             // show chart
             if(search_type == "會員編號"){
                 var data_idx = CATEGORY.indexOf(babyHistory["records"][row][cat_idx])
@@ -58,6 +59,7 @@ function showHistory(){
             else{}
         }
     }
+    return cur;
 }
 
 function getInfoByID(id) {
@@ -90,9 +92,23 @@ function showResult() {
         appendPre(info);
     }
     else{}
-    showHistory();
+    var history = showHistory();
+    showTable(history)
 }
 
-function showTable() {
-    
+function showTable(data) {
+    var col = [];
+    for(var i in babyHistory["headers"]){
+        var th = {
+            "title": babyHistory["headers"][i]
+        }
+        col.push(th);
+    }
+
+    $('#list_table').bootstrapTable({
+        "columns": col,
+        "data": data,
+        "search": true,
+        //"searchOnEnterKey": true
+    });
 }
