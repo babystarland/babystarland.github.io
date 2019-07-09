@@ -22,6 +22,7 @@ function cleanPre() {
     catch(err) {
         console.log(err);
     }
+    $('#list_table').bootstrapTable('destroy');
 }
 
 function showHistory(){
@@ -68,7 +69,7 @@ function getInfoByID(id) {
         var idx = allData[sheet]["headers"].indexOf("會員編號");
         for(var row in allData[sheet]["records"]){
             if(allData[sheet]["records"][row][idx] == id){ 
-                for(var i = 0; i < allData[sheet]["headers"].length; i++){
+                for(let i = 0; i < allData[sheet]["headers"].length; i++){
                     cur[allData[sheet]["headers"][i]] = allData[sheet]["records"][row][i];
                 }
                 // TODO: duplicate ID
@@ -112,4 +113,29 @@ function showTable(header, data) {
         "search": true,
         //"searchOnEnterKey": true
     });
+}
+
+function getListData(header){
+    var data_list = [];
+    for(var sheet in allData){
+        var idx_list = [];
+        for (let i = 0; i < header.length; i++) {
+            idx_list.push(allData[sheet]["headers"].indexOf(header[i]));
+        }
+        
+        for(var row in allData[sheet]["records"]){
+            var cur = [];
+            for (let j = 0; j < idx_list.length; j++) {
+                cur.push(allData[sheet]["records"][row][idx_list[j]]);                
+            }
+            data_list.push(cur);
+        }
+    }
+    return data_list;
+}
+function showList(){
+    cleanPre();
+    var header = ["會員編號", "小家", "認領老師", "孩子姓名", "性別", "孩子恩賜", "小朋友就讀學校"];
+    var data = getListData(header);
+    showTable(header, data);
 }
