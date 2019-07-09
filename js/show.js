@@ -124,6 +124,9 @@ function getListData(header){
         }
         
         for(var row in allData[sheet]["records"]){
+            if (allData[sheet]["records"][row][idx_list[0]] == "") {
+                continue;
+            }
             var cur = [];
             for (let j = 0; j < idx_list.length; j++) {
                 cur.push(allData[sheet]["records"][row][idx_list[j]]);                
@@ -134,6 +137,10 @@ function getListData(header){
     return data_list;
 }
 function showList(header){
+    if(!allData){
+        appendPre("loading");
+        return setTimeout(showList(header), 1000);
+    }
     cleanPre();
     var data = getListData(header);
     showTable(header, data);
