@@ -81,7 +81,7 @@ function getInfoByID(id) {
 
 function showResult() {
     if(isEmpty()) return false;
-    if(!babyHistory){
+    if(!babyHistory && gapi.auth2.getAuthInstance().isSignedIn.get()){
         appendPre("loading");
         return setTimeout(showResult, 1000);
     }
@@ -137,7 +137,7 @@ function getListData(header){
     return data_list;
 }
 function showList(header){
-    if(Object.keys(allData).length === 0){
+    if(Object.keys(allData).length === 0 && gapi.auth2.getAuthInstance().isSignedIn.get()){
         appendPre("loading");
         return setTimeout(function(){
             showList(header);
