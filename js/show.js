@@ -133,9 +133,8 @@ function getListData(header){
     }
     return data_list;
 }
-function showList(){
+function showList(header){
     cleanPre();
-    var header = ["會員編號", "小家", "認領老師", "孩子姓名", "性別", "孩子恩賜", "小朋友就讀學校"];
     var data = getListData(header);
     showTable(header, data);
 }
