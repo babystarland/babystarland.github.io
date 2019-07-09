@@ -139,7 +139,9 @@ function getListData(header){
 function showList(header){
     if(Object.keys(allData).length === 0){
         appendPre("loading");
-        return setTimeout(showList(header), 1000);
+        return setTimeout(function(){
+            showList(header);
+        }, 1000);
     }
     cleanPre();
     var data = getListData(header);
