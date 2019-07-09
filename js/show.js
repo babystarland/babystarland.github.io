@@ -93,16 +93,16 @@ function showResult() {
     }
     else{}
     var history = showHistory();
-    showTable(history)
+    showTable(babyHistory["headers"], history)
 }
 
-function showTable(data) {
+function showTable(header, data) {
     var col = [];
-    for(var i in babyHistory["headers"]){
-        var th = {
-            "title": babyHistory["headers"][i]
+    for(var i in header){
+        var tmp = {
+            "title": header[i]
         }
-        col.push(th);
+        col.push(tmp);
     }
 
     $('#list_table').bootstrapTable('destroy');
