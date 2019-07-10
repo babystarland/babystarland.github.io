@@ -129,7 +129,12 @@ function getListData(header){
             }
             var cur = [];
             for (let j = 0; j < idx_list.length; j++) {
-                cur.push(allData[sheet]["records"][row][idx_list[j]].replace("\n", "<br>"));
+                if (allData[sheet]["records"][row][idx_list[j]] != "") {
+                    cur.push(allData[sheet]["records"][row][idx_list[j]].replace("\n", "<br>"));
+                }
+                else{
+                    cur.push(allData[sheet]["records"][row][idx_list[j]]);
+                }
                 cur[0].push(sheet);
             }
             data_list.push(cur);
