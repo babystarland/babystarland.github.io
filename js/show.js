@@ -135,7 +135,6 @@ function getListData(header){
                 else{
                     cur.push(allData[sheet]["records"][row][idx_list[j]]);
                 }
-                cur[0].push(sheet);
             }
             data_list.push(cur);
         }
