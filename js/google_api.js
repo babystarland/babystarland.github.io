@@ -107,7 +107,7 @@ function handleGetDataResponse(resp) {
                 var idx = allData[sheet_name]["headers"].indexOf("生日");
                 for(var row in allData[sheet_name]["records"]){
                     if(allData[sheet_name]["records"][row][idx]){
-                        allData[sheet_name]["records"][row][idx] = allData[sheet_name]["records"][row][idx].split("/")[1]
+                        allData[sheet_name]["records"][row][idx] = allData[sheet_name]["records"][row][idx].split("/")[1] + "月"
                     }
                 }
             }
