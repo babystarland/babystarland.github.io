@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.jpg">
+    <title>Bible</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/bible.css" rel="stylesheet">
+    <script type="text/javascript">
+    var bible = "old"
+
+    function setBible(name) {
+        bible = name
+    }
+
+    function setVol(name, num) {
+        vol = name.toLowerCase();
+        document.getElementById('Chapter').innerHTML = '<div id="' + name + '" class="tab-pane fade">'
+        for (var i = 1; i <= num; i++) {
+            document.getElementById('Chapter').innerHTML += '<button type="button" class="btn btn-link"><a href="../' + bible + '/' + name.toLowerCase() + '_' + i + '.html">' + i + '</a></button>'
+        }
+        document.getElementById('Chapter').innerHTML += '</div>'
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container mycontainer">
+        <h2 id="Bible" class="target">Bible</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#Old" onclick="setBible('old')">Old Testament</a></li>
+            <li><a data-toggle="tab" href="#New" onclick="setBible('new')">New Testament</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="Old" class="tab-pane fade in active">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Genesis" name="Genesis" onclick="setVol(this.name, 50)">創 Genesis</a></li>
+                    <li><a data-toggle="tab" href="#Exodus" name="Exodus" onclick="setVol(this.name, 40)">出 Exodus</a></li>
+                    <li><a data-toggle="tab" href="#Leviticus" name="Leviticus" onclick="setVol(this.name,27)">利 Leviticus</a></li>
+                    <li><a data-toggle="tab" href="#Numbers" name="Numbers" onclick="setVol(this.name,36)">民 Numbers</a></li>
+                    <li><a data-toggle="tab" href="#Deuteronomy" name="Deuteronomy" onclick="setVol(this.name,34)">申 Deuteronomy</a></li>
+                    <li><a data-toggle="tab" href="#Joshua" name="Joshua" onclick="setVol(this.name,24)">書 Joshua</a></li>
+                    <li><a data-toggle="tab" href="#Judges" name="Judges" onclick="setVol(this.name,21)">士 Judges</a></li>
+                    <li><a data-toggle="tab" href="#Ruth" name="Ruth" onclick="setVol(this.name,4)">得 Ruth</a></li>
+                    <li><a data-toggle="tab" href="#1_Samuel" name="1_Samuel" onclick="setVol(this.name,31)">撒上 1_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#2_Samuel" name="2_Samuel" onclick="setVol(this.name,24)">撒下 2_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#1_Kings" name="1_Kings" onclick="setVol(this.name,22)">王上 1_Kings</a></li>
+                    <li><a data-toggle="tab" href="#2_Kings" name="2_Kings" onclick="setVol(this.name,25)">王下 2_Kings</a></li>
+                    <li><a data-toggle="tab" href="#1_Chronicles" name="1_Chronicles" onclick="setVol(this.name,29)">代上 1_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#2_Chronicles" name="2_Chronicles" onclick="setVol(this.name,36)">代下 2_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#Ezra" name="Ezra" onclick="setVol(this.name,10)">拉 Ezra</a></li>
+                    <li><a data-toggle="tab" href="#Nehemiah" name="Nehemiah" onclick="setVol(this.name,13)">尼 Nehemiah</a></li>
+                    <li><a data-toggle="tab" href="#Esther" name="Esther" onclick="setVol(this.name,10)">斯 Esther</a></li>
+                    <li><a data-toggle="tab" href="#Job" name="Job" onclick="setVol(this.name,42)">伯 Job</a></li>
+                    <li><a data-toggle="tab" href="#Psalms" name="Psalms" onclick="setVol(this.name,150)">詩 Psalms</a></li>
+                    <li><a data-toggle="tab" href="#Proverbs" name="Proverbs" onclick="setVol(this.name,31)">箴 Proverbs</a></li>
+                    <li><a data-toggle="tab" href="#Ecclesiastes" name="Ecclesiastes" onclick="setVol(this.name,12)">傳 Ecclesiastes</a></li>
+                    <li><a data-toggle="tab" href="#Songs" name="Songs" onclick="setVol(this.name,8)">歌 Songs</a></li>
+                    <li><a data-toggle="tab" href="#Isaiah" name="Isaiah" onclick="setVol(this.name,66)">賽 Isaiah</a></li>
+                    <li><a data-toggle="tab" href="#Jeremiah" name="Jeremiah" onclick="setVol(this.name,52)">耶 Jeremiah</a></li>
+                    <li><a data-toggle="tab" href="#Lamentations" name="Lamentations" onclick="setVol(this.name,5)">哀 Lamentations</a></li>
+                    <li><a data-toggle="tab" href="#Ezekiel" name="Ezekiel" onclick="setVol(this.name,48)">結 Ezekiel</a></li>
+                    <li><a data-toggle="tab" href="#Daniel" name="Daniel" onclick="setVol(this.name,12)">但 Daniel</a></li>
+                    <li><a data-toggle="tab" href="#Hosea" name="Hosea" onclick="setVol(this.name,14)">何 Hosea</a></li>
+                    <li><a data-toggle="tab" href="#Joel" name="Joel" onclick="setVol(this.name,3)">珥 Joel</a></li>
+                    <li><a data-toggle="tab" href="#Amos" name="Amos" onclick="setVol(this.name,9)">摩 Amos</a></li>
+                    <li><a data-toggle="tab" href="#Obadiah" name="Obadiah" onclick="setVol(this.name,1)">俄 Obadiah</a></li>
+                    <li><a data-toggle="tab" href="#Jonah" name="Jonah" onclick="setVol(this.name,4)">拿 Jonah</a></li>
+                    <li><a data-toggle="tab" href="#Micah" name="Micah" onclick="setVol(this.name,7)">彌 Micah</a></li>
+                    <li><a data-toggle="tab" href="#Nahum" name="Nahum" onclick="setVol(this.name,3)">鴻 Nahum</a></li>
+                    <li><a data-toggle="tab" href="#Habakkuk" name="Habakkuk" onclick="setVol(this.name,3)">哈 Habakkuk</a></li>
+                    <li><a data-toggle="tab" href="#Zephaniah" name="Zephaniah" onclick="setVol(this.name,3)">番 Zephaniah</a></li>
+                    <li><a data-toggle="tab" href="#Haggai" name="Haggai" onclick="setVol(this.name,2)">該 Haggai</a></li>
+                    <li><a data-toggle="tab" href="#Zechariah" name="Zechariah" onclick="setVol(this.name,14)">亞 Zechariah</a></li>
+                    <li><a data-toggle="tab" href="#Malachi" name="Malachi" onclick="setVol(this.name,4)">瑪 Malachi</a></li>
+                </ul>
+            </div>
+            <div id="New" class="tab-pane fade">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Matthew" name="Matthew" onclick="setVol(this.name,28)">太 Matthew</a></li>
+                    <li><a data-toggle="tab" href="#Mark" name="Mark" onclick="setVol(this.name,16)">可 Mark</a></li>
+                    <li><a data-toggle="tab" href="#Luke" name="Luke" onclick="setVol(this.name,24)">路 Luke</a></li>
+                    <li><a data-toggle="tab" href="#John" name="John" onclick="setVol(this.name,21)">約 John</a></li>
+                    <li><a data-toggle="tab" href="#Acts" name="Acts" onclick="setVol(this.name,28)">徒 Acts</a></li>
+                    <li><a data-toggle="tab" href="#Romans" name="Romans" onclick="setVol(this.name,16)">羅 Romans</a></li>
+                    <li><a data-toggle="tab" href="#1_Corinthians" name="1_Corinthians" onclick="setVol(this.name,16)">林前 1_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#2_Corinthians" name="2_Corinthians" onclick="setVol(this.name,13)">林後 2_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#Galatians" name="Galatians" onclick="setVol(this.name,6)">加 Galatians</a></li>
+                    <li><a data-toggle="tab" href="#Ephesians" name="Ephesians" onclick="setVol(this.name,6)">弗 Ephesians</a></li>
+                    <li><a data-toggle="tab" href="#Philippians" name="Philippians" onclick="setVol(this.name,4)">腓 Philippians</a></li>
+                    <li><a data-toggle="tab" href="#Colossians" name="Colossians" onclick="setVol(this.name,4)">西 Colossians</a></li>
+                    <li><a data-toggle="tab" href="#1_Thessalonians" name="1_Thessalonians" onclick="setVol(this.name,5)">帖前 1_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#2_Thessalonians" name="2_Thessalonians" onclick="setVol(this.name,3)">帖後 2_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#1_Timothy" name="1_Timothy" onclick="setVol(this.name,6)">提前 1_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#2_Timothy" name="2_Timothy" onclick="setVol(this.name,4)">提後 2_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#Titus" name="Titus" onclick="setVol(this.name,3)">多 Titus</a></li>
+                    <li><a data-toggle="tab" href="#Philemon" name="Philemon" onclick="setVol(this.name,1)">門 Philemon</a></li>
+                    <li><a data-toggle="tab" href="#Hebrews" name="Hebrews" onclick="setVol(this.name,13)">來 Hebrews</a></li>
+                    <li><a data-toggle="tab" href="#James" name="James" onclick="setVol(this.name,5)">雅 James</a></li>
+                    <li><a data-toggle="tab" href="#1_Peter" name="1_Peter" onclick="setVol(this.name,5)">彼前 1_Peter</a></li>
+                    <li><a data-toggle="tab" href="#2_Peter" name="2_Peter" onclick="setVol(this.name,3)">彼後 2_Peter</a></li>
+                    <li><a data-toggle="tab" href="#1_John" name="1_John" onclick="setVol(this.name,5)">約一 1_John</a></li>
+                    <li><a data-toggle="tab" href="#2_John" name="2_John" onclick="setVol(this.name,1)">約二 2_John</a></li>
+                    <li><a data-toggle="tab" href="#3_John" name="3_John" onclick="setVol(this.name,1)">約三 3_John</a></li>
+                    <li><a data-toggle="tab" href="#Jude" name="Jude" onclick="setVol(this.name,1)">猶 Jude</a></li>
+                    <li><a data-toggle="tab" href="#Revelation" name="Revelation" onclick="setVol(this.name,22)">啟 Revelation</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <span id="Chapter"></span>
+            </div>
+        </div>
+        <h2 class="target" id="Content">
+ Deuteronomy 28
+</h2>
+<div class="container">
+ <table class="table" width="100%">
+  <tr>
+   <td width="50%">
+    <div class="text-bible myfont-family">
+    </div>
+    <h4 class="title-bible myfont-family">
+     遵行誡命必蒙福祉
+    </h4>
+    <div class="text-bible myfont-family">
+     1 「你若留意聽從耶和華你神的話，謹守遵行他的一切誡命，就是我今日所吩咐你的，他必使你超乎天下萬民之上。
+     <br/>
+     2 你若聽從耶和華你神的話，這以下的福必追隨你，臨到你身上。
+     <br/>
+     3 你在城裡必蒙福，在田間也必蒙福。
+     <br/>
+     4 你身所生的，地所產的，牲畜所下的，以及牛犢、羊羔，都必蒙福。
+     <br/>
+     5 你的筐子和你的摶麵盆都必蒙福。
+     <br/>
+     6 你出也蒙福，入也蒙福。
+     <br/>
+     7 「仇敵起來攻擊你，耶和華必使他們在你面前被你殺敗。他們從一條路來攻擊你，必從七條路逃跑。
+     <br/>
+     8 在你倉房裡，並你手所辦的一切事上，耶和華所命的福必臨到你。耶和華你神也要在所給你的地上賜福於你。
+     <br/>
+     9 你若謹守耶和華你神的誡命，遵行他的道，他必照著向你所起的誓立你作為自己的聖民。
+     <br/>
+     10 天下萬民見你歸在耶和華的名下，就要懼怕你。
+     <br/>
+     11 你在耶和華向你列祖起誓應許賜你的地上，他必使你身所生的，牲畜所下的，地所產的，都綽綽有餘。
+     <br/>
+     12 耶和華必為你開天上的府庫，按時降雨在你的地上，在你手裡所辦的一切事上賜福於你。你必借給許多國民，卻不致向他們借貸。
+     <br/>
+     13
+     <br/>
+     14 你若聽從耶和華你神的誡命，就是我今日所吩咐你的，謹守遵行，不偏左右，也不隨從侍奉別神，耶和華就必使你做首不做尾，但居上不居下。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     違逆主言必受重禍
+    </h4>
+    <div class="text-bible myfont-family">
+     15 「你若不聽從耶和華你神的話，不謹守遵行他的一切誡命、律例，就是我今日所吩咐你的，這以下的咒詛都必追隨你，臨到你身上。
+     <br/>
+     16 你在城裡必受咒詛，在田間也必受咒詛。
+     <br/>
+     17 你的筐子和你的摶麵盆都必受咒詛。
+     <br/>
+     18 你身所生的，地所產的，以及牛犢、羊羔，都必受咒詛。
+     <br/>
+     19 你出也受咒詛，入也受咒詛。
+     <br/>
+     20 「耶和華因你行惡離棄他，必在你手裡所辦的一切事上，使咒詛、擾亂、責罰臨到你，直到你被毀滅，速速地滅亡。
+     <br/>
+     21 耶和華必使瘟疫貼在你身上，直到他將你從所進去得為業的地上滅絕。
+     <br/>
+     22 耶和華要用癆病、熱病、火症、瘧疾、刀劍、旱風、霉爛攻擊你，這都要追趕你，直到你滅亡。
+     <br/>
+     23 你頭上的天要變為銅，腳下的地要變為鐵。
+     <br/>
+     24 耶和華要使那降在你地上的雨變為塵沙，從天臨在你身上，直到你滅亡。
+     <br/>
+     25 「耶和華必使你敗在仇敵面前，你從一條路去攻擊他們，必從七條路逃跑。你必在天下萬國中拋來拋去。
+     <br/>
+     26 你的屍首必給空中的飛鳥和地上的走獸做食物，並無人鬨趕。
+     <br/>
+     27 耶和華必用埃及人的瘡並痔瘡，牛皮癬與疥攻擊你，使你不能醫治。
+     <br/>
+     28 耶和華必用癲狂、眼瞎、心驚攻擊你。
+     <br/>
+     29 你必在午間摸索，好像瞎子在暗中摸索一樣。你所行的必不亨通，時常遭遇欺壓、搶奪，無人搭救。
+     <br/>
+     30 你聘定了妻，別人必與她同房。你建造房屋，不得住在其內。你栽種葡萄園，也不得用其中的果子。
+     <br/>
+     31 你的牛在你眼前宰了，你必不得吃牠的肉。你的驢在你眼前被搶奪，不得歸還。你的羊歸了仇敵，無人搭救。
+     <br/>
+     32 你的兒女必歸於別國的民。你的眼目終日切望，甚至失明，你手中無力拯救。
+     <br/>
+     33 你的土產和你勞碌得來的，必被你所不認識的國民吃盡。你時常被欺負，受壓制，
+     <br/>
+     34 甚至你因眼中所看見的，必致瘋狂。
+     <br/>
+     35 耶和華必攻擊你，使你膝上腿上，從腳掌到頭頂，長毒瘡無法醫治。
+     <br/>
+     36 「耶和華必將你和你所立的王，領到你和你列祖素不認識的國去，在那裡你必侍奉木頭石頭的神。
+     <br/>
+     37 你在耶和華領你到的各國中，要令人驚駭、笑談、譏誚。
+     <br/>
+     38 你帶到田間的種子雖多，收進來的卻少，因為被蝗蟲吃了。
+     <br/>
+     39 你栽種，修理葡萄園，卻不得收葡萄，也不得喝葡萄酒，因為被蟲子吃了。
+     <br/>
+     40 你全境有橄欖樹，卻不得其油抹身，因為樹上的橄欖不熟自落了。
+     <br/>
+     41 你生兒養女，卻不算是你的，因為必被擄去。
+     <br/>
+     42 你所有的樹木和你地裡的出產必被蝗蟲所吃。
+     <br/>
+     43 在你中間寄居的，必漸漸上升，比你高而又高；你必漸漸下降，低而又低。
+     <br/>
+     44 他必借給你，你卻不能借給他；他必做首，你必做尾。
+     <br/>
+     45 這一切咒詛必追隨你，趕上你，直到你滅亡，因為你不聽從耶和華你神的話，不遵守他所吩咐的誡命、律例。
+     <br/>
+     46 這些咒詛必在你和你後裔的身上成為異蹟奇事，直到永遠。
+     <br/>
+     47 「因為你富有的時候，不歡心樂意地侍奉耶和華你的神，
+     <br/>
+     48 所以你必在飢餓、乾渴、赤露、缺乏之中，侍奉耶和華所打發來攻擊你的仇敵。他必把鐵軛加在你的頸項上，直到將你滅絕。
+     <br/>
+     49 耶和華要從遠方地極帶一國的民，如鷹飛來攻擊你。這民的言語，你不懂得。
+     <br/>
+     50 這民的面貌凶惡，不顧恤年老的，也不恩待年少的。
+     <br/>
+     51 他們必吃你牲畜所下的和你地土所產的，直到你滅亡。你的五穀、新酒和油，以及牛犢、羊羔，都不給你留下，直到將你滅絕。
+     <br/>
+     52 他們必將你困在你各城裡，直到你所倚靠高大堅固的城牆都被攻塌。他們必將你困在耶和華你神所賜你遍地的各城裡。
+     <br/>
+     53 你在仇敵圍困窘迫之中，必吃你本身所生的，就是耶和華你神所賜給你的兒女之肉。
+     <br/>
+     54 你們中間柔弱嬌嫩的人，必惡眼看他弟兄和他懷中的妻，並他餘剩的兒女。
+     <br/>
+     55 甚至在你受仇敵圍困窘迫的城中，他要吃兒女的肉，不肯分一點給他的親人，因為他一無所剩。
+     <br/>
+     56 你們中間柔弱嬌嫩的婦人，是因嬌嫩柔弱不肯把腳踏地的，必惡眼看她懷中的丈夫和她的兒女。
+     <br/>
+     57 她兩腿中間出來的嬰孩與她所要生的兒女，她因缺乏一切，就要在你受仇敵圍困窘迫的城中將他們暗暗地吃了。
+     <br/>
+     58 「這書上所寫律法的一切話，是叫你敬畏耶和華你神可榮可畏的名。
+     <br/>
+     59 你若不謹守遵行，耶和華就必將奇災，就是至大至長的災，至重至久的病，加在你和你後裔的身上；
+     <br/>
+     60 也必使你所懼怕、埃及人的病都臨到你，貼在你身上；
+     <br/>
+     61 又必將沒有寫在這律法書上的各樣疾病、災殃降在你身上，直到你滅亡。
+     <br/>
+     62 你們先前雖然像天上的星那樣多，卻因不聽從耶和華你神的話，所剩的人數就稀少了。
+     <br/>
+     63 先前耶和華怎樣喜悅善待你們，使你們眾多，也要照樣喜悅毀滅你們，使你們滅亡，並且你們從所要進去得的地上必被拔除。
+     <br/>
+     64 耶和華必使你們分散在萬民中，從地這邊到地那邊，你必在那裡侍奉你和你列祖素不認識、木頭石頭的神。
+     <br/>
+     65 在那些國中，你必不得安逸，也不得落腳之地；耶和華卻使你在那裡心中跳動，眼目失明，精神消耗。
+     <br/>
+     66 你的性命必懸懸無定，你晝夜恐懼，自料性命難保。
+     <br/>
+     67 你因心裡所恐懼的、眼中所看見的，早晨必說『巴不得到晚上才好』，晚上必說『巴不得到早晨才好』。
+     <br/>
+     68 耶和華必使你坐船回埃及去，走我曾告訴你不得再見的路，在那裡你必賣己身於仇敵做奴婢，卻無人買。」
+     <br/>
+    </div>
+   </td>
+  </tr>
+ </table>
+</div>
+<br/>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="footer">
+ <div class="container">
+  <div class="fooer-center">
+   <ul class="list-inline">
+    <li>
+     <a class="fa fa-facebook-official" href="https://www.facebook.com/groups/1884925705074616/" style="font-size:36px" target="_blank">
+     </a>
+    </li>
+   </ul>
+   <ul class="list-inline">
+    <li>
+     ©NLC. All rights reserved.
+    </li>
+   </ul>
+  </div>
+ </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>

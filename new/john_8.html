@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.jpg">
+    <title>Bible</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/bible.css" rel="stylesheet">
+    <script type="text/javascript">
+    var bible = "old"
+
+    function setBible(name) {
+        bible = name
+    }
+
+    function setVol(name, num) {
+        vol = name.toLowerCase();
+        document.getElementById('Chapter').innerHTML = '<div id="' + name + '" class="tab-pane fade">'
+        for (var i = 1; i <= num; i++) {
+            document.getElementById('Chapter').innerHTML += '<button type="button" class="btn btn-link"><a href="../' + bible + '/' + name.toLowerCase() + '_' + i + '.html">' + i + '</a></button>'
+        }
+        document.getElementById('Chapter').innerHTML += '</div>'
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container mycontainer">
+        <h2 id="Bible" class="target">Bible</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#Old" onclick="setBible('old')">Old Testament</a></li>
+            <li><a data-toggle="tab" href="#New" onclick="setBible('new')">New Testament</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="Old" class="tab-pane fade in active">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Genesis" name="Genesis" onclick="setVol(this.name, 50)">創 Genesis</a></li>
+                    <li><a data-toggle="tab" href="#Exodus" name="Exodus" onclick="setVol(this.name, 40)">出 Exodus</a></li>
+                    <li><a data-toggle="tab" href="#Leviticus" name="Leviticus" onclick="setVol(this.name,27)">利 Leviticus</a></li>
+                    <li><a data-toggle="tab" href="#Numbers" name="Numbers" onclick="setVol(this.name,36)">民 Numbers</a></li>
+                    <li><a data-toggle="tab" href="#Deuteronomy" name="Deuteronomy" onclick="setVol(this.name,34)">申 Deuteronomy</a></li>
+                    <li><a data-toggle="tab" href="#Joshua" name="Joshua" onclick="setVol(this.name,24)">書 Joshua</a></li>
+                    <li><a data-toggle="tab" href="#Judges" name="Judges" onclick="setVol(this.name,21)">士 Judges</a></li>
+                    <li><a data-toggle="tab" href="#Ruth" name="Ruth" onclick="setVol(this.name,4)">得 Ruth</a></li>
+                    <li><a data-toggle="tab" href="#1_Samuel" name="1_Samuel" onclick="setVol(this.name,31)">撒上 1_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#2_Samuel" name="2_Samuel" onclick="setVol(this.name,24)">撒下 2_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#1_Kings" name="1_Kings" onclick="setVol(this.name,22)">王上 1_Kings</a></li>
+                    <li><a data-toggle="tab" href="#2_Kings" name="2_Kings" onclick="setVol(this.name,25)">王下 2_Kings</a></li>
+                    <li><a data-toggle="tab" href="#1_Chronicles" name="1_Chronicles" onclick="setVol(this.name,29)">代上 1_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#2_Chronicles" name="2_Chronicles" onclick="setVol(this.name,36)">代下 2_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#Ezra" name="Ezra" onclick="setVol(this.name,10)">拉 Ezra</a></li>
+                    <li><a data-toggle="tab" href="#Nehemiah" name="Nehemiah" onclick="setVol(this.name,13)">尼 Nehemiah</a></li>
+                    <li><a data-toggle="tab" href="#Esther" name="Esther" onclick="setVol(this.name,10)">斯 Esther</a></li>
+                    <li><a data-toggle="tab" href="#Job" name="Job" onclick="setVol(this.name,42)">伯 Job</a></li>
+                    <li><a data-toggle="tab" href="#Psalms" name="Psalms" onclick="setVol(this.name,150)">詩 Psalms</a></li>
+                    <li><a data-toggle="tab" href="#Proverbs" name="Proverbs" onclick="setVol(this.name,31)">箴 Proverbs</a></li>
+                    <li><a data-toggle="tab" href="#Ecclesiastes" name="Ecclesiastes" onclick="setVol(this.name,12)">傳 Ecclesiastes</a></li>
+                    <li><a data-toggle="tab" href="#Songs" name="Songs" onclick="setVol(this.name,8)">歌 Songs</a></li>
+                    <li><a data-toggle="tab" href="#Isaiah" name="Isaiah" onclick="setVol(this.name,66)">賽 Isaiah</a></li>
+                    <li><a data-toggle="tab" href="#Jeremiah" name="Jeremiah" onclick="setVol(this.name,52)">耶 Jeremiah</a></li>
+                    <li><a data-toggle="tab" href="#Lamentations" name="Lamentations" onclick="setVol(this.name,5)">哀 Lamentations</a></li>
+                    <li><a data-toggle="tab" href="#Ezekiel" name="Ezekiel" onclick="setVol(this.name,48)">結 Ezekiel</a></li>
+                    <li><a data-toggle="tab" href="#Daniel" name="Daniel" onclick="setVol(this.name,12)">但 Daniel</a></li>
+                    <li><a data-toggle="tab" href="#Hosea" name="Hosea" onclick="setVol(this.name,14)">何 Hosea</a></li>
+                    <li><a data-toggle="tab" href="#Joel" name="Joel" onclick="setVol(this.name,3)">珥 Joel</a></li>
+                    <li><a data-toggle="tab" href="#Amos" name="Amos" onclick="setVol(this.name,9)">摩 Amos</a></li>
+                    <li><a data-toggle="tab" href="#Obadiah" name="Obadiah" onclick="setVol(this.name,1)">俄 Obadiah</a></li>
+                    <li><a data-toggle="tab" href="#Jonah" name="Jonah" onclick="setVol(this.name,4)">拿 Jonah</a></li>
+                    <li><a data-toggle="tab" href="#Micah" name="Micah" onclick="setVol(this.name,7)">彌 Micah</a></li>
+                    <li><a data-toggle="tab" href="#Nahum" name="Nahum" onclick="setVol(this.name,3)">鴻 Nahum</a></li>
+                    <li><a data-toggle="tab" href="#Habakkuk" name="Habakkuk" onclick="setVol(this.name,3)">哈 Habakkuk</a></li>
+                    <li><a data-toggle="tab" href="#Zephaniah" name="Zephaniah" onclick="setVol(this.name,3)">番 Zephaniah</a></li>
+                    <li><a data-toggle="tab" href="#Haggai" name="Haggai" onclick="setVol(this.name,2)">該 Haggai</a></li>
+                    <li><a data-toggle="tab" href="#Zechariah" name="Zechariah" onclick="setVol(this.name,14)">亞 Zechariah</a></li>
+                    <li><a data-toggle="tab" href="#Malachi" name="Malachi" onclick="setVol(this.name,4)">瑪 Malachi</a></li>
+                </ul>
+            </div>
+            <div id="New" class="tab-pane fade">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Matthew" name="Matthew" onclick="setVol(this.name,28)">太 Matthew</a></li>
+                    <li><a data-toggle="tab" href="#Mark" name="Mark" onclick="setVol(this.name,16)">可 Mark</a></li>
+                    <li><a data-toggle="tab" href="#Luke" name="Luke" onclick="setVol(this.name,24)">路 Luke</a></li>
+                    <li><a data-toggle="tab" href="#John" name="John" onclick="setVol(this.name,21)">約 John</a></li>
+                    <li><a data-toggle="tab" href="#Acts" name="Acts" onclick="setVol(this.name,28)">徒 Acts</a></li>
+                    <li><a data-toggle="tab" href="#Romans" name="Romans" onclick="setVol(this.name,16)">羅 Romans</a></li>
+                    <li><a data-toggle="tab" href="#1_Corinthians" name="1_Corinthians" onclick="setVol(this.name,16)">林前 1_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#2_Corinthians" name="2_Corinthians" onclick="setVol(this.name,13)">林後 2_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#Galatians" name="Galatians" onclick="setVol(this.name,6)">加 Galatians</a></li>
+                    <li><a data-toggle="tab" href="#Ephesians" name="Ephesians" onclick="setVol(this.name,6)">弗 Ephesians</a></li>
+                    <li><a data-toggle="tab" href="#Philippians" name="Philippians" onclick="setVol(this.name,4)">腓 Philippians</a></li>
+                    <li><a data-toggle="tab" href="#Colossians" name="Colossians" onclick="setVol(this.name,4)">西 Colossians</a></li>
+                    <li><a data-toggle="tab" href="#1_Thessalonians" name="1_Thessalonians" onclick="setVol(this.name,5)">帖前 1_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#2_Thessalonians" name="2_Thessalonians" onclick="setVol(this.name,3)">帖後 2_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#1_Timothy" name="1_Timothy" onclick="setVol(this.name,6)">提前 1_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#2_Timothy" name="2_Timothy" onclick="setVol(this.name,4)">提後 2_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#Titus" name="Titus" onclick="setVol(this.name,3)">多 Titus</a></li>
+                    <li><a data-toggle="tab" href="#Philemon" name="Philemon" onclick="setVol(this.name,1)">門 Philemon</a></li>
+                    <li><a data-toggle="tab" href="#Hebrews" name="Hebrews" onclick="setVol(this.name,13)">來 Hebrews</a></li>
+                    <li><a data-toggle="tab" href="#James" name="James" onclick="setVol(this.name,5)">雅 James</a></li>
+                    <li><a data-toggle="tab" href="#1_Peter" name="1_Peter" onclick="setVol(this.name,5)">彼前 1_Peter</a></li>
+                    <li><a data-toggle="tab" href="#2_Peter" name="2_Peter" onclick="setVol(this.name,3)">彼後 2_Peter</a></li>
+                    <li><a data-toggle="tab" href="#1_John" name="1_John" onclick="setVol(this.name,5)">約一 1_John</a></li>
+                    <li><a data-toggle="tab" href="#2_John" name="2_John" onclick="setVol(this.name,1)">約二 2_John</a></li>
+                    <li><a data-toggle="tab" href="#3_John" name="3_John" onclick="setVol(this.name,1)">約三 3_John</a></li>
+                    <li><a data-toggle="tab" href="#Jude" name="Jude" onclick="setVol(this.name,1)">猶 Jude</a></li>
+                    <li><a data-toggle="tab" href="#Revelation" name="Revelation" onclick="setVol(this.name,22)">啟 Revelation</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <span id="Chapter"></span>
+            </div>
+        </div>
+        <h2 class="target" id="Content">
+ John 8
+</h2>
+<div class="container">
+ <table class="table" width="100%">
+  <tr>
+   <td width="50%">
+    <div class="text-bible myfont-family">
+    </div>
+    <h4 class="title-bible myfont-family">
+     拿淫婦來質難主
+    </h4>
+    <div class="text-bible myfont-family">
+     1 於是各人都回家去了。耶穌卻往橄欖山去。
+     <br/>
+     2 清早又回到殿裡，眾百姓都到他那裡去，他就坐下教訓他們。
+     <br/>
+     3 文士和法利賽人帶著一個行淫時被拿的婦人來，叫她站在當中，
+     <br/>
+     4 就對耶穌說：「夫子，這婦人是正行淫之時被拿的。
+     <br/>
+     5 摩西在律法上吩咐我們把這樣的婦人用石頭打死，你說該把她怎麼樣呢？」
+     <br/>
+     6 他們說這話乃試探耶穌，要得著告他的把柄。耶穌卻彎著腰，用指頭在地上畫字。
+     <br/>
+     7 他們還是不住地問他，耶穌就直起腰來，對他們說：「你們中間誰是沒有罪的，誰就可以先拿石頭打她。」
+     <br/>
+     8 於是又彎著腰，用指頭在地上畫字。
+     <br/>
+     9 他們聽見這話，就從老到少，一個一個地都出去了，只剩下耶穌一人，還有那婦人仍然站在當中。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     不要再犯罪
+    </h4>
+    <div class="text-bible myfont-family">
+     10 耶穌就直起腰來，對她說：「婦人，那些人在哪裡呢？沒有人定你的罪嗎？」
+     <br/>
+     11 她說：「主啊，沒有。」耶穌說：「我也不定你的罪。去吧，從此不要再犯罪了！」
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     主是世界的光
+    </h4>
+    <div class="text-bible myfont-family">
+     12 耶穌又對眾人說：「我是世界的光。跟從我的，就不在黑暗裡走，必要得著生命的光。」
+     <br/>
+     13 法利賽人對他說：「你是為自己作見證，你的見證不真。」
+     <br/>
+     14 耶穌說：「我雖然為自己作見證，我的見證還是真的；因我知道我從哪裡來，往哪裡去。你們卻不知道我從哪裡來，往哪裡去。
+     <br/>
+     15 你們是以外貌判斷人，我卻不判斷人。
+     <br/>
+     16 就是判斷人，我的判斷也是真的，因為不是我獨自在這裡，還有差我來的父與我同在。
+     <br/>
+     17 你們的律法上也記著說：『兩個人的見證是真的。』
+     <br/>
+     18 我是為自己作見證，還有差我來的父也是為我作見證。」
+     <br/>
+     19 他們就問他說：「你的父在哪裡？」耶穌回答說：「你們不認識我，也不認識我的父；若是認識我，也就認識我的父。」
+     <br/>
+     20 這些話是耶穌在殿裡的庫房教訓人時所說的，也沒有人拿他，因為他的時候還沒有到。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     不信主的必死在罪裡
+    </h4>
+    <div class="text-bible myfont-family">
+     21 耶穌又對他們說：「我要去了，你們要找我，並且你們要死在罪中。我所去的地方你們不能到。」
+     <br/>
+     22 猶太人說：「他說『我所去的地方你們不能到』，難道他要自盡嗎？」
+     <br/>
+     23 耶穌對他們說：「你們是從下頭來的，我是從上頭來的；你們是屬這世界的，我不是屬這世界的。
+     <br/>
+     24 所以我對你們說，你們要死在罪中；你們若不信我是基督，必要死在罪中。」
+     <br/>
+     25 他們就問他說：「你是誰？」耶穌對他們說：「就是我從起初所告訴你們的。
+     <br/>
+     26 我有許多事講論你們，判斷你們；但那差我來的是真的，我在他那裡所聽見的，我就傳給世人。」
+     <br/>
+     27 他們不明白耶穌是指著父說的。
+     <br/>
+     28 所以耶穌說：「你們舉起人子以後，必知道我是基督，並且知道我沒有一件事是憑著自己做的。我說這些話乃是照著父所教訓我的。
+     <br/>
+     29 那差我來的是與我同在，他沒有撇下我獨自在這裡，因為我常做他所喜悅的事。」
+     <br/>
+     30 耶穌說這話的時候，就有許多人信他。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     真理叫人得以自由
+    </h4>
+    <div class="text-bible myfont-family">
+     31 耶穌對信他的猶太人說：「你們若常常遵守我的道，就真是我的門徒，
+     <br/>
+     32 你們必曉得真理，真理必叫你們得以自由。」
+     <br/>
+     33 他們回答說：「我們是亞伯拉罕的後裔，從來沒有做過誰的奴僕，你怎麼說『你們必得以自由』呢？」
+     <br/>
+     34 耶穌回答說：「我實實在在地告訴你們：所有犯罪的就是罪的奴僕。
+     <br/>
+     35 奴僕不能永遠住在家裡，兒子是永遠住在家裡。
+     <br/>
+     36 所以天父的兒子若叫你們自由，你們就真自由了。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     誰為亞伯拉罕的真子孫
+    </h4>
+    <div class="text-bible myfont-family">
+     37 「我知道你們是亞伯拉罕的子孫，你們卻想要殺我，因為你們心裡容不下我的道。
+     <br/>
+     38 我所說的，是在我父那裡看見的；你們所行的，是在你們的父那裡聽見的。」
+     <br/>
+     39 他們說：「我們的父就是亞伯拉罕！」耶穌說：「你們若是亞伯拉罕的兒子，就必行亞伯拉罕所行的事。
+     <br/>
+     40 我將在神那裡所聽見的真理告訴了你們，現在你們卻想要殺我，這不是亞伯拉罕所行的事。
+     <br/>
+     41 你們是行你們父所行的事。」他們說：「我們不是從淫亂生的。我們只有一位父，就是神！」
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     出於神的必聽神的話
+    </h4>
+    <div class="text-bible myfont-family">
+     42 耶穌說：「倘若神是你們的父，你們就必愛我。因為我本是出於神，也是從神而來；並不是由著自己來，乃是他差我來。
+     <br/>
+     43 你們為什麼不明白我的話呢？無非是因你們不能聽我的道。
+     <br/>
+     44 你們是出於你們的父魔鬼，你們父的私慾你們偏要行。他從起初是殺人的，不守真理，因他心裡沒有真理。他說謊是出於自己，因他本來是說謊的，也是說謊之人的父。
+     <br/>
+     45 我將真理告訴你們，你們就因此不信我。
+     <br/>
+     46 你們中間誰能指證我有罪呢？我既然將真理告訴你們，為什麼不信我呢？
+     <br/>
+     47 出於神的必聽神的話，你們不聽，因為你們不是出於神。」
+     <br/>
+     48 猶太人回答說：「我們說你是撒馬利亞人，並且是鬼附著的，這話豈不正對嗎？」
+     <br/>
+     49 耶穌說：「我不是鬼附著的。我尊敬我的父，你們倒輕慢我。
+     <br/>
+     50 我不求自己的榮耀，有一位為我求榮耀、定是非的。
+     <br/>
+     51 我實實在在地告訴你們：人若遵守我的道，就永遠不見死。」
+     <br/>
+     52 猶太人對他說：「現在我們知道你是鬼附著的。亞伯拉罕死了，眾先知也死了，你還說『人若遵守我的道，就永遠不嘗死味』。
+     <br/>
+     53 難道你比我們的祖宗亞伯拉罕還大嗎？他死了，眾先知也死了。你將自己當做什麼人呢？」
+     <br/>
+     54 耶穌回答說：「我若榮耀自己，我的榮耀就算不得什麼。榮耀我的乃是我的父，就是你們所說是你們的神。
+     <br/>
+     55 你們未曾認識他，我卻認識他。我若說不認識他，我就是說謊的，像你們一樣。但我認識他，也遵守他的道。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     耶穌言己在亞伯拉罕之先
+    </h4>
+    <div class="text-bible myfont-family">
+     56 「你們的祖宗亞伯拉罕歡歡喜喜地仰望我的日子，既看見了，就快樂。」
+     <br/>
+     57 猶太人說：「你還沒有五十歲，豈見過亞伯拉罕呢？」
+     <br/>
+     58 耶穌說：「我實實在在地告訴你們：還沒有亞伯拉罕就有了我。」
+     <br/>
+     59 於是他們拿石頭要打他，耶穌卻躲藏，從殿裡出去了。
+     <br/>
+    </div>
+   </td>
+  </tr>
+ </table>
+</div>
+<br/>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="footer">
+ <div class="container">
+  <div class="fooer-center">
+   <ul class="list-inline">
+    <li>
+     <a class="fa fa-facebook-official" href="https://www.facebook.com/groups/1884925705074616/" style="font-size:36px" target="_blank">
+     </a>
+    </li>
+   </ul>
+   <ul class="list-inline">
+    <li>
+     ©NLC. All rights reserved.
+    </li>
+   </ul>
+  </div>
+ </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>

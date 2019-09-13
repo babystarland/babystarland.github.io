@@ -34,6 +34,9 @@
                 aria-controls="history" aria-selected="true" onclick="cleanPre();">生命歷程搜尋</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" id="name-list-tab" href="old/genesis_1.html">Bible</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" id="name-list-tab" href="#child-name-list" role="tab" data-toggle="tab"
                 aria-controls="name-list" aria-selected="false" onclick="showList(child_list_header);">小孩名單搜尋</a>
             </li>
@@ -79,9 +82,14 @@
             </div>
           </form>
         </div>
+
+        <div id="Bible" class="tab-pane fade" role="tabpanel" aria-labelledby="name-list-tab">
+          <h3>Bible</h3>
+        </div>
+
         <div id="child-name-list" class="tab-pane fade" role="tabpanel" aria-labelledby="name-list-tab">
           <h3>小孩名單搜尋</h3>
-          <div style="height: 10px;"></div>
+          <!--<div style="height: 10px;"></div>
           <form action="javascript:showResult()" onSubmit="return showResult();">
             <div class="input-group mb-3">
               <input type="text" id="search_content" class="form-control" placeholder="搜尋..">
@@ -90,20 +98,10 @@
                   onclick="showResult();">搜尋</button>
               </div>
             </div>
-          </form>
+          </form>-->
         </div>
         <div id="parent-name-list" class="tab-pane fade" role="tabpanel" aria-labelledby="name-list-tab">
           <h3>家長名單搜尋</h3>
-          <div style="height: 10px;"></div>
-          <form action="javascript:showResult()" onSubmit="return showResult();">
-            <div class="input-group mb-3">
-              <input type="text" id="search_content" class="form-control" placeholder="搜尋..">
-              <div class="input-group-append">
-                <button type="button" id="search_button" class="btn btn-outline-secondary"
-                  onclick="showResult();">搜尋</button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
 

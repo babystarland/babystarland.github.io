@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.jpg">
+    <title>Bible</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/bible.css" rel="stylesheet">
+    <script type="text/javascript">
+    var bible = "old"
+
+    function setBible(name) {
+        bible = name
+    }
+
+    function setVol(name, num) {
+        vol = name.toLowerCase();
+        document.getElementById('Chapter').innerHTML = '<div id="' + name + '" class="tab-pane fade">'
+        for (var i = 1; i <= num; i++) {
+            document.getElementById('Chapter').innerHTML += '<button type="button" class="btn btn-link"><a href="../' + bible + '/' + name.toLowerCase() + '_' + i + '.html">' + i + '</a></button>'
+        }
+        document.getElementById('Chapter').innerHTML += '</div>'
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container mycontainer">
+        <h2 id="Bible" class="target">Bible</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#Old" onclick="setBible('old')">Old Testament</a></li>
+            <li><a data-toggle="tab" href="#New" onclick="setBible('new')">New Testament</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="Old" class="tab-pane fade in active">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Genesis" name="Genesis" onclick="setVol(this.name, 50)">創 Genesis</a></li>
+                    <li><a data-toggle="tab" href="#Exodus" name="Exodus" onclick="setVol(this.name, 40)">出 Exodus</a></li>
+                    <li><a data-toggle="tab" href="#Leviticus" name="Leviticus" onclick="setVol(this.name,27)">利 Leviticus</a></li>
+                    <li><a data-toggle="tab" href="#Numbers" name="Numbers" onclick="setVol(this.name,36)">民 Numbers</a></li>
+                    <li><a data-toggle="tab" href="#Deuteronomy" name="Deuteronomy" onclick="setVol(this.name,34)">申 Deuteronomy</a></li>
+                    <li><a data-toggle="tab" href="#Joshua" name="Joshua" onclick="setVol(this.name,24)">書 Joshua</a></li>
+                    <li><a data-toggle="tab" href="#Judges" name="Judges" onclick="setVol(this.name,21)">士 Judges</a></li>
+                    <li><a data-toggle="tab" href="#Ruth" name="Ruth" onclick="setVol(this.name,4)">得 Ruth</a></li>
+                    <li><a data-toggle="tab" href="#1_Samuel" name="1_Samuel" onclick="setVol(this.name,31)">撒上 1_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#2_Samuel" name="2_Samuel" onclick="setVol(this.name,24)">撒下 2_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#1_Kings" name="1_Kings" onclick="setVol(this.name,22)">王上 1_Kings</a></li>
+                    <li><a data-toggle="tab" href="#2_Kings" name="2_Kings" onclick="setVol(this.name,25)">王下 2_Kings</a></li>
+                    <li><a data-toggle="tab" href="#1_Chronicles" name="1_Chronicles" onclick="setVol(this.name,29)">代上 1_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#2_Chronicles" name="2_Chronicles" onclick="setVol(this.name,36)">代下 2_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#Ezra" name="Ezra" onclick="setVol(this.name,10)">拉 Ezra</a></li>
+                    <li><a data-toggle="tab" href="#Nehemiah" name="Nehemiah" onclick="setVol(this.name,13)">尼 Nehemiah</a></li>
+                    <li><a data-toggle="tab" href="#Esther" name="Esther" onclick="setVol(this.name,10)">斯 Esther</a></li>
+                    <li><a data-toggle="tab" href="#Job" name="Job" onclick="setVol(this.name,42)">伯 Job</a></li>
+                    <li><a data-toggle="tab" href="#Psalms" name="Psalms" onclick="setVol(this.name,150)">詩 Psalms</a></li>
+                    <li><a data-toggle="tab" href="#Proverbs" name="Proverbs" onclick="setVol(this.name,31)">箴 Proverbs</a></li>
+                    <li><a data-toggle="tab" href="#Ecclesiastes" name="Ecclesiastes" onclick="setVol(this.name,12)">傳 Ecclesiastes</a></li>
+                    <li><a data-toggle="tab" href="#Songs" name="Songs" onclick="setVol(this.name,8)">歌 Songs</a></li>
+                    <li><a data-toggle="tab" href="#Isaiah" name="Isaiah" onclick="setVol(this.name,66)">賽 Isaiah</a></li>
+                    <li><a data-toggle="tab" href="#Jeremiah" name="Jeremiah" onclick="setVol(this.name,52)">耶 Jeremiah</a></li>
+                    <li><a data-toggle="tab" href="#Lamentations" name="Lamentations" onclick="setVol(this.name,5)">哀 Lamentations</a></li>
+                    <li><a data-toggle="tab" href="#Ezekiel" name="Ezekiel" onclick="setVol(this.name,48)">結 Ezekiel</a></li>
+                    <li><a data-toggle="tab" href="#Daniel" name="Daniel" onclick="setVol(this.name,12)">但 Daniel</a></li>
+                    <li><a data-toggle="tab" href="#Hosea" name="Hosea" onclick="setVol(this.name,14)">何 Hosea</a></li>
+                    <li><a data-toggle="tab" href="#Joel" name="Joel" onclick="setVol(this.name,3)">珥 Joel</a></li>
+                    <li><a data-toggle="tab" href="#Amos" name="Amos" onclick="setVol(this.name,9)">摩 Amos</a></li>
+                    <li><a data-toggle="tab" href="#Obadiah" name="Obadiah" onclick="setVol(this.name,1)">俄 Obadiah</a></li>
+                    <li><a data-toggle="tab" href="#Jonah" name="Jonah" onclick="setVol(this.name,4)">拿 Jonah</a></li>
+                    <li><a data-toggle="tab" href="#Micah" name="Micah" onclick="setVol(this.name,7)">彌 Micah</a></li>
+                    <li><a data-toggle="tab" href="#Nahum" name="Nahum" onclick="setVol(this.name,3)">鴻 Nahum</a></li>
+                    <li><a data-toggle="tab" href="#Habakkuk" name="Habakkuk" onclick="setVol(this.name,3)">哈 Habakkuk</a></li>
+                    <li><a data-toggle="tab" href="#Zephaniah" name="Zephaniah" onclick="setVol(this.name,3)">番 Zephaniah</a></li>
+                    <li><a data-toggle="tab" href="#Haggai" name="Haggai" onclick="setVol(this.name,2)">該 Haggai</a></li>
+                    <li><a data-toggle="tab" href="#Zechariah" name="Zechariah" onclick="setVol(this.name,14)">亞 Zechariah</a></li>
+                    <li><a data-toggle="tab" href="#Malachi" name="Malachi" onclick="setVol(this.name,4)">瑪 Malachi</a></li>
+                </ul>
+            </div>
+            <div id="New" class="tab-pane fade">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Matthew" name="Matthew" onclick="setVol(this.name,28)">太 Matthew</a></li>
+                    <li><a data-toggle="tab" href="#Mark" name="Mark" onclick="setVol(this.name,16)">可 Mark</a></li>
+                    <li><a data-toggle="tab" href="#Luke" name="Luke" onclick="setVol(this.name,24)">路 Luke</a></li>
+                    <li><a data-toggle="tab" href="#John" name="John" onclick="setVol(this.name,21)">約 John</a></li>
+                    <li><a data-toggle="tab" href="#Acts" name="Acts" onclick="setVol(this.name,28)">徒 Acts</a></li>
+                    <li><a data-toggle="tab" href="#Romans" name="Romans" onclick="setVol(this.name,16)">羅 Romans</a></li>
+                    <li><a data-toggle="tab" href="#1_Corinthians" name="1_Corinthians" onclick="setVol(this.name,16)">林前 1_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#2_Corinthians" name="2_Corinthians" onclick="setVol(this.name,13)">林後 2_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#Galatians" name="Galatians" onclick="setVol(this.name,6)">加 Galatians</a></li>
+                    <li><a data-toggle="tab" href="#Ephesians" name="Ephesians" onclick="setVol(this.name,6)">弗 Ephesians</a></li>
+                    <li><a data-toggle="tab" href="#Philippians" name="Philippians" onclick="setVol(this.name,4)">腓 Philippians</a></li>
+                    <li><a data-toggle="tab" href="#Colossians" name="Colossians" onclick="setVol(this.name,4)">西 Colossians</a></li>
+                    <li><a data-toggle="tab" href="#1_Thessalonians" name="1_Thessalonians" onclick="setVol(this.name,5)">帖前 1_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#2_Thessalonians" name="2_Thessalonians" onclick="setVol(this.name,3)">帖後 2_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#1_Timothy" name="1_Timothy" onclick="setVol(this.name,6)">提前 1_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#2_Timothy" name="2_Timothy" onclick="setVol(this.name,4)">提後 2_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#Titus" name="Titus" onclick="setVol(this.name,3)">多 Titus</a></li>
+                    <li><a data-toggle="tab" href="#Philemon" name="Philemon" onclick="setVol(this.name,1)">門 Philemon</a></li>
+                    <li><a data-toggle="tab" href="#Hebrews" name="Hebrews" onclick="setVol(this.name,13)">來 Hebrews</a></li>
+                    <li><a data-toggle="tab" href="#James" name="James" onclick="setVol(this.name,5)">雅 James</a></li>
+                    <li><a data-toggle="tab" href="#1_Peter" name="1_Peter" onclick="setVol(this.name,5)">彼前 1_Peter</a></li>
+                    <li><a data-toggle="tab" href="#2_Peter" name="2_Peter" onclick="setVol(this.name,3)">彼後 2_Peter</a></li>
+                    <li><a data-toggle="tab" href="#1_John" name="1_John" onclick="setVol(this.name,5)">約一 1_John</a></li>
+                    <li><a data-toggle="tab" href="#2_John" name="2_John" onclick="setVol(this.name,1)">約二 2_John</a></li>
+                    <li><a data-toggle="tab" href="#3_John" name="3_John" onclick="setVol(this.name,1)">約三 3_John</a></li>
+                    <li><a data-toggle="tab" href="#Jude" name="Jude" onclick="setVol(this.name,1)">猶 Jude</a></li>
+                    <li><a data-toggle="tab" href="#Revelation" name="Revelation" onclick="setVol(this.name,22)">啟 Revelation</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <span id="Chapter"></span>
+            </div>
+        </div>
+        <h2 class="target" id="Content">
+ 1_Kings 7
+</h2>
+<div class="container">
+ <table class="table" width="100%">
+  <tr>
+   <td width="50%">
+    <div class="text-bible myfont-family">
+    </div>
+    <h4 class="title-bible myfont-family">
+     建黎巴嫩林宮
+    </h4>
+    <div class="text-bible myfont-family">
+     1 所羅門為自己建造宮室，十三年方才造成。
+     <br/>
+     2 又建造黎巴嫩林宮，長一百肘，寬五十肘，高三十肘。有香柏木柱三行，柱上有香柏木柁梁，
+     <br/>
+     3 其上以香柏木為蓋，每行柱子十五根，共有四十五根。
+     <br/>
+     4 有窗戶三層，窗與窗相對。
+     <br/>
+     5 所有的門框都是厚木見方的，有窗戶三層，窗與窗相對。
+     <br/>
+     6 並建造有柱子的廊子，長五十肘，寬三十肘。在這廊前又有廊子，廊外有柱子和臺階。
+     <br/>
+     7 又建造一廊，其中設立審判的座位，這廊從地到頂都用香柏木遮蔽。
+     <br/>
+     8 廊後院內有所羅門住的宮室，工作與這工作相同。所羅門又為所娶法老的女兒建造一宮，做法與這廊子一樣。
+     <br/>
+     9 建造這一切所用的石頭都是寶貴的，是按著尺寸鑿成的，是用鋸裡外鋸齊的。從根基直到簷石，從外頭直到大院，都是如此。
+     <br/>
+     10 根基是寶貴的大石頭，有長十肘的，有長八肘的，
+     <br/>
+     11 上面有香柏木和按著尺寸鑿成寶貴的石頭。
+     <br/>
+     12 大院周圍有鑿成的石頭三層，香柏木一層，都照耶和華殿的內院和殿廊的樣式。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     戶蘭之巧技
+    </h4>
+    <div class="text-bible myfont-family">
+     13 所羅門王差遣人往推羅去，將戶蘭召了來。
+     <br/>
+     14 他是拿弗他利支派中一個寡婦的兒子，他父親是推羅人，做銅匠的。戶蘭滿有智慧、聰明、技能，善於各樣銅作。他來到所羅門王那裡，做王一切所要做的。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     製銅柱
+    </h4>
+    <div class="text-bible myfont-family">
+     15 他製造兩根銅柱，每根高十八肘，圍十二肘。
+     <br/>
+     16 又用銅鑄了兩個柱頂安在柱上，各高五肘。
+     <br/>
+     17 柱頂上有裝修的網子和擰成的鏈索，每頂七個。
+     <br/>
+     18 網子周圍有兩行石榴遮蓋柱頂，兩個柱頂都是如此。
+     <br/>
+     19 廊子的柱頂徑四肘，刻著百合花。
+     <br/>
+     20 兩柱頂的鼓肚上挨著網子，各有兩行石榴環繞，兩行共有二百。
+     <br/>
+     21 他將兩根柱子立在殿廊前頭，右邊立一根，起名叫雅斤，左邊立一根，起名叫波阿斯。
+     <br/>
+     22 在柱頂上刻著百合花。這樣，造柱子的工就完畢了。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     鑄銅海
+    </h4>
+    <div class="text-bible myfont-family">
+     23 他又鑄一個銅海，樣式是圓的，高五肘，徑十肘，圍三十肘。
+     <br/>
+     24 在海邊之下，周圍有野瓜的樣式，每肘十瓜，共有兩行，是鑄海的時候鑄上的。
+     <br/>
+     25 有十二隻銅牛馱海，三隻向北，三隻向西，三隻向南，三隻向東。海在牛上，牛尾都向內。
+     <br/>
+     26 海厚一掌，邊如杯邊，又如百合花，可容二千罷特。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     製銅座
+    </h4>
+    <div class="text-bible myfont-family">
+     27 他用銅製造十個盆座，每座長四肘，寬四肘，高三肘。
+     <br/>
+     28 座的造法是這樣：四面都有心子，心子在邊子當中。
+     <br/>
+     29 心子上有獅子和牛並基路伯。邊上有小座，獅子和牛以下有垂下的瓔珞。
+     <br/>
+     30 每盆座有四個銅輪和銅軸。小座的四角上在盆以下，有鑄成的盆架，其旁都有瓔珞。
+     <br/>
+     31 小座高一肘，口是圓的，彷彿座的樣式，徑一肘半，在口上有雕工，心子是方的，不是圓的。
+     <br/>
+     32 四個輪子在心子以下，輪軸與座相連，每輪高一肘半。
+     <br/>
+     33 輪的樣式如同車輪，軸、輞、輻、轂都是鑄的。
+     <br/>
+     34 每座四角上都有盆架，是與座一同鑄成的。
+     <br/>
+     35 座上有圓架，高半肘。座上有撐子和心子，是與座一同鑄的。
+     <br/>
+     36 在撐子和心子上刻著基路伯、獅子和棕樹，周圍有瓔珞。
+     <br/>
+     37 十個盆座都是這樣，鑄法、尺寸、樣式相同。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     製銅盆
+    </h4>
+    <div class="text-bible myfont-family">
+     38 又用銅製造十個盆，每盆可容四十罷特，盆徑四肘。在那十座上，每座安設一盆。
+     <br/>
+     39 五個安在殿門的右邊，五個放在殿門的左邊。又將海放在殿門的右旁，就是南邊。
+     <br/>
+     40 戶蘭又造了盆、鏟子和盤子。這樣，他為所羅門王做完了耶和華殿的一切工。
+     <br/>
+     41 所造的就是兩根柱子和柱上兩個如球的頂，並兩個蓋柱頂的網子，
+     <br/>
+     42 和四百石榴，安在兩個網子上，每網兩行，蓋著兩個柱上如球的頂。
+     <br/>
+     43 十個座和其上的十個盆，
+     <br/>
+     44 海和海下的十二隻牛，
+     <br/>
+     45 盆、鏟子、盤子。這一切都是戶蘭給所羅門王用光亮的銅為耶和華的殿造成的，
+     <br/>
+     46 是遵王命在約旦平原，疏割和撒拉但中間藉膠泥鑄成的。
+     <br/>
+     47 這一切所羅門都沒有過秤，因為甚多，銅的輕重也無法可查。
+     <br/>
+     48 所羅門又造耶和華殿裡的金壇和陳設餅的金桌子；
+     <br/>
+     49 內殿前的精金燈臺，右邊五個，左邊五個；並其上的金花、燈盞、蠟剪；
+     <br/>
+     50 與精金的杯、盤、鑷子、調羹、火鼎；以及至聖所，內殿的門樞和外殿的門樞。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     殿工告竣
+    </h4>
+    <div class="text-bible myfont-family">
+     51 所羅門王做完了耶和華殿的一切工，就把他父大衛分別為聖的金銀和器皿都帶來，放在耶和華殿的府庫裡。
+     <br/>
+    </div>
+   </td>
+  </tr>
+ </table>
+</div>
+<br/>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="footer">
+ <div class="container">
+  <div class="fooer-center">
+   <ul class="list-inline">
+    <li>
+     <a class="fa fa-facebook-official" href="https://www.facebook.com/groups/1884925705074616/" style="font-size:36px" target="_blank">
+     </a>
+    </li>
+   </ul>
+   <ul class="list-inline">
+    <li>
+     ©NLC. All rights reserved.
+    </li>
+   </ul>
+  </div>
+ </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>

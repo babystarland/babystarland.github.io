@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.jpg">
+    <title>Bible</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../css/bible.css" rel="stylesheet">
+    <script type="text/javascript">
+    var bible = "old"
+
+    function setBible(name) {
+        bible = name
+    }
+
+    function setVol(name, num) {
+        vol = name.toLowerCase();
+        document.getElementById('Chapter').innerHTML = '<div id="' + name + '" class="tab-pane fade">'
+        for (var i = 1; i <= num; i++) {
+            document.getElementById('Chapter').innerHTML += '<button type="button" class="btn btn-link"><a href="../' + bible + '/' + name.toLowerCase() + '_' + i + '.html">' + i + '</a></button>'
+        }
+        document.getElementById('Chapter').innerHTML += '</div>'
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container mycontainer">
+        <h2 id="Bible" class="target">Bible</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#Old" onclick="setBible('old')">Old Testament</a></li>
+            <li><a data-toggle="tab" href="#New" onclick="setBible('new')">New Testament</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="Old" class="tab-pane fade in active">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Genesis" name="Genesis" onclick="setVol(this.name, 50)">創 Genesis</a></li>
+                    <li><a data-toggle="tab" href="#Exodus" name="Exodus" onclick="setVol(this.name, 40)">出 Exodus</a></li>
+                    <li><a data-toggle="tab" href="#Leviticus" name="Leviticus" onclick="setVol(this.name,27)">利 Leviticus</a></li>
+                    <li><a data-toggle="tab" href="#Numbers" name="Numbers" onclick="setVol(this.name,36)">民 Numbers</a></li>
+                    <li><a data-toggle="tab" href="#Deuteronomy" name="Deuteronomy" onclick="setVol(this.name,34)">申 Deuteronomy</a></li>
+                    <li><a data-toggle="tab" href="#Joshua" name="Joshua" onclick="setVol(this.name,24)">書 Joshua</a></li>
+                    <li><a data-toggle="tab" href="#Judges" name="Judges" onclick="setVol(this.name,21)">士 Judges</a></li>
+                    <li><a data-toggle="tab" href="#Ruth" name="Ruth" onclick="setVol(this.name,4)">得 Ruth</a></li>
+                    <li><a data-toggle="tab" href="#1_Samuel" name="1_Samuel" onclick="setVol(this.name,31)">撒上 1_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#2_Samuel" name="2_Samuel" onclick="setVol(this.name,24)">撒下 2_Samuel</a></li>
+                    <li><a data-toggle="tab" href="#1_Kings" name="1_Kings" onclick="setVol(this.name,22)">王上 1_Kings</a></li>
+                    <li><a data-toggle="tab" href="#2_Kings" name="2_Kings" onclick="setVol(this.name,25)">王下 2_Kings</a></li>
+                    <li><a data-toggle="tab" href="#1_Chronicles" name="1_Chronicles" onclick="setVol(this.name,29)">代上 1_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#2_Chronicles" name="2_Chronicles" onclick="setVol(this.name,36)">代下 2_Chronicles</a></li>
+                    <li><a data-toggle="tab" href="#Ezra" name="Ezra" onclick="setVol(this.name,10)">拉 Ezra</a></li>
+                    <li><a data-toggle="tab" href="#Nehemiah" name="Nehemiah" onclick="setVol(this.name,13)">尼 Nehemiah</a></li>
+                    <li><a data-toggle="tab" href="#Esther" name="Esther" onclick="setVol(this.name,10)">斯 Esther</a></li>
+                    <li><a data-toggle="tab" href="#Job" name="Job" onclick="setVol(this.name,42)">伯 Job</a></li>
+                    <li><a data-toggle="tab" href="#Psalms" name="Psalms" onclick="setVol(this.name,150)">詩 Psalms</a></li>
+                    <li><a data-toggle="tab" href="#Proverbs" name="Proverbs" onclick="setVol(this.name,31)">箴 Proverbs</a></li>
+                    <li><a data-toggle="tab" href="#Ecclesiastes" name="Ecclesiastes" onclick="setVol(this.name,12)">傳 Ecclesiastes</a></li>
+                    <li><a data-toggle="tab" href="#Songs" name="Songs" onclick="setVol(this.name,8)">歌 Songs</a></li>
+                    <li><a data-toggle="tab" href="#Isaiah" name="Isaiah" onclick="setVol(this.name,66)">賽 Isaiah</a></li>
+                    <li><a data-toggle="tab" href="#Jeremiah" name="Jeremiah" onclick="setVol(this.name,52)">耶 Jeremiah</a></li>
+                    <li><a data-toggle="tab" href="#Lamentations" name="Lamentations" onclick="setVol(this.name,5)">哀 Lamentations</a></li>
+                    <li><a data-toggle="tab" href="#Ezekiel" name="Ezekiel" onclick="setVol(this.name,48)">結 Ezekiel</a></li>
+                    <li><a data-toggle="tab" href="#Daniel" name="Daniel" onclick="setVol(this.name,12)">但 Daniel</a></li>
+                    <li><a data-toggle="tab" href="#Hosea" name="Hosea" onclick="setVol(this.name,14)">何 Hosea</a></li>
+                    <li><a data-toggle="tab" href="#Joel" name="Joel" onclick="setVol(this.name,3)">珥 Joel</a></li>
+                    <li><a data-toggle="tab" href="#Amos" name="Amos" onclick="setVol(this.name,9)">摩 Amos</a></li>
+                    <li><a data-toggle="tab" href="#Obadiah" name="Obadiah" onclick="setVol(this.name,1)">俄 Obadiah</a></li>
+                    <li><a data-toggle="tab" href="#Jonah" name="Jonah" onclick="setVol(this.name,4)">拿 Jonah</a></li>
+                    <li><a data-toggle="tab" href="#Micah" name="Micah" onclick="setVol(this.name,7)">彌 Micah</a></li>
+                    <li><a data-toggle="tab" href="#Nahum" name="Nahum" onclick="setVol(this.name,3)">鴻 Nahum</a></li>
+                    <li><a data-toggle="tab" href="#Habakkuk" name="Habakkuk" onclick="setVol(this.name,3)">哈 Habakkuk</a></li>
+                    <li><a data-toggle="tab" href="#Zephaniah" name="Zephaniah" onclick="setVol(this.name,3)">番 Zephaniah</a></li>
+                    <li><a data-toggle="tab" href="#Haggai" name="Haggai" onclick="setVol(this.name,2)">該 Haggai</a></li>
+                    <li><a data-toggle="tab" href="#Zechariah" name="Zechariah" onclick="setVol(this.name,14)">亞 Zechariah</a></li>
+                    <li><a data-toggle="tab" href="#Malachi" name="Malachi" onclick="setVol(this.name,4)">瑪 Malachi</a></li>
+                </ul>
+            </div>
+            <div id="New" class="tab-pane fade">
+                <ul class="nav nav-tabs scroll-ul">
+                    <li><a data-toggle="tab" href="#Matthew" name="Matthew" onclick="setVol(this.name,28)">太 Matthew</a></li>
+                    <li><a data-toggle="tab" href="#Mark" name="Mark" onclick="setVol(this.name,16)">可 Mark</a></li>
+                    <li><a data-toggle="tab" href="#Luke" name="Luke" onclick="setVol(this.name,24)">路 Luke</a></li>
+                    <li><a data-toggle="tab" href="#John" name="John" onclick="setVol(this.name,21)">約 John</a></li>
+                    <li><a data-toggle="tab" href="#Acts" name="Acts" onclick="setVol(this.name,28)">徒 Acts</a></li>
+                    <li><a data-toggle="tab" href="#Romans" name="Romans" onclick="setVol(this.name,16)">羅 Romans</a></li>
+                    <li><a data-toggle="tab" href="#1_Corinthians" name="1_Corinthians" onclick="setVol(this.name,16)">林前 1_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#2_Corinthians" name="2_Corinthians" onclick="setVol(this.name,13)">林後 2_Corinthians</a></li>
+                    <li><a data-toggle="tab" href="#Galatians" name="Galatians" onclick="setVol(this.name,6)">加 Galatians</a></li>
+                    <li><a data-toggle="tab" href="#Ephesians" name="Ephesians" onclick="setVol(this.name,6)">弗 Ephesians</a></li>
+                    <li><a data-toggle="tab" href="#Philippians" name="Philippians" onclick="setVol(this.name,4)">腓 Philippians</a></li>
+                    <li><a data-toggle="tab" href="#Colossians" name="Colossians" onclick="setVol(this.name,4)">西 Colossians</a></li>
+                    <li><a data-toggle="tab" href="#1_Thessalonians" name="1_Thessalonians" onclick="setVol(this.name,5)">帖前 1_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#2_Thessalonians" name="2_Thessalonians" onclick="setVol(this.name,3)">帖後 2_Thessalonians</a></li>
+                    <li><a data-toggle="tab" href="#1_Timothy" name="1_Timothy" onclick="setVol(this.name,6)">提前 1_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#2_Timothy" name="2_Timothy" onclick="setVol(this.name,4)">提後 2_Timothy</a></li>
+                    <li><a data-toggle="tab" href="#Titus" name="Titus" onclick="setVol(this.name,3)">多 Titus</a></li>
+                    <li><a data-toggle="tab" href="#Philemon" name="Philemon" onclick="setVol(this.name,1)">門 Philemon</a></li>
+                    <li><a data-toggle="tab" href="#Hebrews" name="Hebrews" onclick="setVol(this.name,13)">來 Hebrews</a></li>
+                    <li><a data-toggle="tab" href="#James" name="James" onclick="setVol(this.name,5)">雅 James</a></li>
+                    <li><a data-toggle="tab" href="#1_Peter" name="1_Peter" onclick="setVol(this.name,5)">彼前 1_Peter</a></li>
+                    <li><a data-toggle="tab" href="#2_Peter" name="2_Peter" onclick="setVol(this.name,3)">彼後 2_Peter</a></li>
+                    <li><a data-toggle="tab" href="#1_John" name="1_John" onclick="setVol(this.name,5)">約一 1_John</a></li>
+                    <li><a data-toggle="tab" href="#2_John" name="2_John" onclick="setVol(this.name,1)">約二 2_John</a></li>
+                    <li><a data-toggle="tab" href="#3_John" name="3_John" onclick="setVol(this.name,1)">約三 3_John</a></li>
+                    <li><a data-toggle="tab" href="#Jude" name="Jude" onclick="setVol(this.name,1)">猶 Jude</a></li>
+                    <li><a data-toggle="tab" href="#Revelation" name="Revelation" onclick="setVol(this.name,22)">啟 Revelation</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <span id="Chapter"></span>
+            </div>
+        </div>
+        <h2 class="target" id="Content">
+ Acts 19
+</h2>
+<div class="container">
+ <table class="table" width="100%">
+  <tr>
+   <td width="50%">
+    <div class="text-bible myfont-family">
+    </div>
+    <h4 class="title-bible myfont-family">
+     保羅遇見施洗約翰的門徒
+    </h4>
+    <div class="text-bible myfont-family">
+     1 亞波羅在哥林多的時候，保羅經過了上邊一帶地方，就來到以弗所。在那裡遇見幾個門徒，
+     <br/>
+     2 問他們說：「你們信的時候受了聖靈沒有？」他們回答說：「沒有，也未曾聽見有聖靈賜下來。」
+     <br/>
+     3 保羅說：「這樣，你們受的是什麼洗呢？」他們說：「是約翰的洗。」
+     <br/>
+     4 保羅說：「約翰所行的是悔改的洗，告訴百姓當信那在他以後要來的，就是耶穌。」
+     <br/>
+     5 他們聽見這話，就奉主耶穌的名受洗。
+     <br/>
+     6 保羅按手在他們頭上，聖靈便降在他們身上，他們就說方言，又說預言。
+     <br/>
+     7 一共約有十二個人。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     保羅在推喇奴的學房辯論
+    </h4>
+    <div class="text-bible myfont-family">
+     8 保羅進會堂放膽講道，一連三個月，辯論神國的事，勸化眾人。
+     <br/>
+     9 後來，有些人心裡剛硬不信，在眾人面前毀謗這道，保羅就離開他們，也叫門徒與他們分離，便在推喇奴的學房天天辯論。
+     <br/>
+     10 這樣有兩年之久，叫一切住在亞細亞的，無論是猶太人是希臘人，都聽見主的道。
+     <br/>
+     11 神藉保羅的手行了些非常的奇事，
+     <br/>
+     12 甚至有人從保羅身上拿手巾或圍裙放在病人身上，病就退了，惡鬼也出去了。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     被鬼附的勝了趕鬼的
+    </h4>
+    <div class="text-bible myfont-family">
+     13 那時，有幾個遊行各處、念咒趕鬼的猶太人，向那被惡鬼附的人擅自稱主耶穌的名，說：「我奉保羅所傳的耶穌，敕令你們出來！」
+     <br/>
+     14 做這事的，有猶太祭司長士基瓦的七個兒子。
+     <br/>
+     15 惡鬼回答他們說：「耶穌我認識，保羅我也知道，你們卻是誰呢？」
+     <br/>
+     16 惡鬼所附的人就跳在他們身上，勝了其中二人，制伏他們，叫他們赤著身子受了傷，從那房子裡逃出去了。
+     <br/>
+     17 凡住在以弗所的，無論是猶太人是希臘人，都知道這事，也都懼怕，主耶穌的名從此就尊大了。
+     <br/>
+     18 那已經信的，多有人來承認訴說自己所行的事。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     行邪術的燒自己的書
+    </h4>
+    <div class="text-bible myfont-family">
+     19 平素行邪術的，也有許多人把書拿來，堆積在眾人面前焚燒。他們算計書價，便知道共合五萬塊錢。
+     <br/>
+     20 主的道大大興旺，而且得勝，就是這樣。
+     <br/>
+     21 這些事完了，保羅心裡定意經過了馬其頓、亞該亞，就往耶路撒冷去，又說：「我到了那裡以後，也必須往羅馬去看看。」
+     <br/>
+     22 於是從幫助他的人中打發提摩太、以拉都二人往馬其頓去，自己暫時等在亞細亞。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     底米丟和銀匠鼓噪鬧事
+    </h4>
+    <div class="text-bible myfont-family">
+     23 那時，因為這道起的擾亂不小。
+     <br/>
+     24 有一個銀匠名叫底米丟，是製造亞底米神銀龕的，他使這樣手藝人生意發達。
+     <br/>
+     25 他聚集他們和同行的工人，說：「眾位，你們知道我們是倚靠這生意發財。
+     <br/>
+     26 這保羅不但在以弗所，也幾乎在亞細亞全地引誘迷惑許多人，說人手所做的不是神。這是你們所看見、所聽見的。
+     <br/>
+     27 這樣，不獨我們這事業被人藐視，就是大女神亞底米的廟也要被人輕忽，連亞細亞全地和普天下所敬拜的大女神之威榮也要消滅了！」
+     <br/>
+     28 眾人聽見，就怒氣填胸，喊著說：「大哉，以弗所人的亞底米啊！」
+     <br/>
+     29 滿城都轟動起來。眾人拿住與保羅同行的馬其頓人該猶和亞里達古，齊心擁進戲園裡去。
+     <br/>
+     30 保羅想要進去到百姓那裡，門徒卻不許他去。
+     <br/>
+     31 還有亞細亞幾位首領，是保羅的朋友，打發人來勸他，不要冒險到戲園裡去。
+     <br/>
+     32 聚集的人紛紛亂亂，有喊叫這個的，有喊叫那個的，大半不知道是為什麼聚集。
+     <br/>
+     33 有人把亞歷山大從眾人中帶出來，猶太人推他往前，亞歷山大就擺手，要向百姓分訴。
+     <br/>
+     34 只因他們認出他是猶太人，就大家同聲喊著說：「大哉，以弗所人的亞底米啊！」如此約有兩小時。
+     <br/>
+    </div>
+    <h4 class="title-bible myfont-family">
+     以弗所的書記使眾人安靜
+    </h4>
+    <div class="text-bible myfont-family">
+     35 那城裡的書記安撫了眾人，就說：「以弗所人哪，誰不知道以弗所人的城是看守大亞底米的廟和從宙斯那裡落下來的像呢？
+     <br/>
+     36 這事既是駁不倒的，你們就當安靜，不可造次。
+     <br/>
+     37 你們把這些人帶來，他們並沒有偷竊廟中之物，也沒有謗讟我們的女神。
+     <br/>
+     38 若是底米丟和他同行的人有控告人的事，自有放告的日子，也有方伯可以彼此對告。
+     <br/>
+     39 你們若問別的事，就可以照常例聚集斷定。
+     <br/>
+     40 今日的擾亂本是無緣無故，我們難免被查問；論到這樣聚眾，我們也說不出所以然來。」
+     <br/>
+     41 說了這話，便叫眾人散去。
+     <br/>
+    </div>
+   </td>
+  </tr>
+ </table>
+</div>
+<br/>
+<!-- /.container -->
+<!-- Footer -->
+<footer class="footer">
+ <div class="container">
+  <div class="fooer-center">
+   <ul class="list-inline">
+    <li>
+     <a class="fa fa-facebook-official" href="https://www.facebook.com/groups/1884925705074616/" style="font-size:36px" target="_blank">
+     </a>
+    </li>
+   </ul>
+   <ul class="list-inline">
+    <li>
+     ©NLC. All rights reserved.
+    </li>
+   </ul>
+  </div>
+ </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
